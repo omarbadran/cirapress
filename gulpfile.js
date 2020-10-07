@@ -12,18 +12,13 @@ let hostname = 'http://localhost:8080';
  * Global modules
  */
 const argv         = require('minimist')(process.argv.slice(2));
-const autoprefixer = require('gulp-autoprefixer');
 const beeper       = require('beeper');
 const browsersync  = require('browser-sync').create();
-const concat       = require('gulp-concat');
 const flatten      = require('gulp-flatten');
 const gulp         = require('gulp');
 const del          = require('del');
 const gulpif       = require('gulp-if');
 const imagemin     = require('gulp-imagemin');
-const lazypipe     = require('lazypipe');
-const merge        = require('merge-stream');
-const cleancss     = require('gulp-clean-css');
 const plumber      = require('gulp-plumber');
 const sass         = require('gulp-sass');
 const sourcemaps   = require('gulp-sourcemaps');
@@ -32,6 +27,9 @@ const rename       = require('gulp-rename');
 const svgstore     = require('gulp-svgstore');
 const file         = require('gulp-file');
 const babel        = require('gulp-babel');
+const postcss      = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano      = require('cssnano');
 
 /**
  * Asset paths
@@ -68,6 +66,11 @@ const path = {
 };
 
 /**
+ * Disable or enable features
+ */
+let production = argv.production;
+
+/**
  * Timestamps
  *
  * Update asset class timestamp to last-edited.json
@@ -88,9 +91,18 @@ const updateTimestamp = (stamp) => {
  * Compiles, combines, and optimizes Bower CSS and project CSS.
  * By default this task will only log a warning if a precompiler error is
  * raised. If the `--production` flag is set: this task will fail outright.
- */
+//  */
 gulp.task('styles', () => {
     updateTimestamp('css');
+    
+    return gulp.src(path.styles.source + '**/*.scss')
+        .pipe(gulpif(!production, plumber()))
+        .pipe(gulpif(!production, sourcemaps.init()))
+        .pipe(sass())
+        .pipe(postcss([ autoprefixer(), cssnano() ]))
+        .pipe(gulpif(!production, sourcemaps.write()))
+        .pipe(gulp.dest(path.styles.dist))
+        .pipe(browsersync.stream({match: '**/*.css'}));
 });
   
 /**
@@ -100,6 +112,20 @@ gulp.task('styles', () => {
  */
 gulp.task('scripts', () => {
     updateTimestamp('js');
+
+    return gulp.src(path.scripts.source + '**/*.js')
+        .pipe(gulpif(!production, sourcemaps.init()))
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))      
+        .pipe(uglify())
+        .on('error', function(err) {
+            beeper();
+            console.log(err);
+        })
+        .pipe(gulpif(!production, sourcemaps.write()))
+        .pipe(gulp.dest(path.scripts.dist))
+        .pipe(browsersync.stream({match: '**/*.js'}))
 });
 
 /**
@@ -213,21 +239,14 @@ gulp.task('clean', () => {
  * See: http://www.browsersync.io
  */
 gulp.task('watch', () => {
-    var new_tab = 'local';
-
-    if (argv.q) new_tab = false;
-
     // browsersync changes
     browsersync.init({
         files: [
             '**/*.php', '*.php'
         ],
         proxy: hostname,
-        snippetOptions: {
-            whitelist: ['/wp-admin/admin-ajax.php'],
-            blacklist: ['/wp-admin/**']
-        },
-        open: new_tab
+        open: false,
+        reloadOnRestart: true,
     });
 
     // watch these files
@@ -246,8 +265,7 @@ gulp.task('watch', () => {
  * Generally you should be running `gulp` instead of `gulp build`.
  */
 gulp.task('build', gulp.series(
-    gulp.parallel('styles', 'scripts'),
-    gulp.parallel('fonts', 'images', 'svgstore', 'favicon')
+    gulp.parallel('scripts', 'styles', 'fonts', 'images', 'svgstore', 'favicon')
 ));
   
 /**
