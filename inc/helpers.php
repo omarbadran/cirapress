@@ -9,35 +9,21 @@ namespace CiraPress;
 
 
 /**
- * Get last-edited timestamp
- *
- * @global array $cirapress_timestamps cached timestamp values
- *
- * @param string $asset ID of asset type
- *
- * @return int UNIX timestamp
+ * Get last-edited timestamp for assets
+ * 
+ * @since 1.0.0
+ * @access public
+ * @return int
  */
-function last_edited($asset = 'css') {
+function assets_timestamp() {
+	$filepath = get_template_directory() . '/assets/last-edited.json';
 
-  global $cirapress_timestamps;
+	if (file_exists($filepath)) {
+		$json = file_get_contents($filepath);
+		$timestamps = json_decode($json, true);
 
-  // save timestamps to cache in global variable for this request
-  if (empty($cirapress_timestamps)) {
+		return $timestamps;
+	}
 
-    $filepath = get_template_directory() . '/assets/last-edited.json';
-
-    if (file_exists($filepath)) {
-      $json = file_get_contents($filepath);
-      $cirapress_timestamps = json_decode($json, true);
-    }
-
-  }
-
-  // use cached value from global variable
-  if (isset($cirapress_timestamps[$asset])) {
-    return absint($cirapress_timestamps[$asset]);
-  }
-
-  return 0;
-
+	return false;
 }

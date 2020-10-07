@@ -4,13 +4,14 @@
  * Enqueue scripts and styles
  */
 add_action('wp_enqueue_scripts', function() {
+  $timestamps = CiraPress\assets_timestamp();
 
   // main css
   wp_enqueue_style(
     'cirapress-style',
     get_template_directory_uri() . '/dist/styles/main.css',
     [],
-    CiraPress\last_edited('css')
+    $timestamps['css']
   );
 
   // main js
@@ -18,10 +19,9 @@ add_action('wp_enqueue_scripts', function() {
     'cirapress-js',
     get_template_directory_uri() . '/dist/scripts/main.js',
     [],
-    CiraPress\last_edited('js'),
+    $timestamps['js'],
     true
   );
-
 
   // comments
   if (is_singular() && comments_open() && get_option('thread_comments')) {
