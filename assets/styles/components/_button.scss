@@ -1,0 +1,35 @@
+.btn {
+  transition: all .2s ease-out;
+  @include border-radius($border-radius);
+    border-width:$border-width;
+
+  &:not(:disabled):hover {
+      transform: translateY(-1px);
+  }
+
+  .btn-wrapper--label:not(:first-child) {
+    margin-left: ($spacer / 2);
+  }
+
+  .btn-wrapper--label {
+    display: inline-block;
+
+    & + .btn-wrapper--icon {
+      margin-left: ($spacer / 2);
+    }
+  }
+}
+
+.btn-pill {
+  @include border-radius($border-radius-lg * 5);
+}
+
+.btn-icon-transition {
+  transition: $transition-base;
+}
+
+.btn:hover {
+  .btn-icon-transition {
+    transform: scale(1.1);
+  }
+}

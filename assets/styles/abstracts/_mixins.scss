@@ -1,0 +1,37 @@
+// buttons
+@mixin btn-soft-variant($parent, $color) {
+    #{$parent} {
+        background-color: $color !important;
+        
+    }
+}
+
+// Badge soft colors
+@each $color,$value in $theme-colors {
+    .badge-soft-#{$color} {
+        background-color: rgba($value, 0.15);
+    }
+}
+
+// Buttons soft colors
+@each $color,$value in $theme-colors {
+    .btn-#{$color}-alt {
+        color: $body-color;
+        background-color: rgba($value, 0.15);
+    }
+}
+
+// Buttons soft colors
+@each $color,$value in $theme-colors {
+    .alert-soft-#{$color} {
+        background-color: rgba($value, 0.15);
+    }
+}
+
+// Alt colors
+@each $color,$value in $theme-colors {
+    .bg-#{$color}-alt {
+            background-color: rgba($value, 0.13);
+    }
+}
+

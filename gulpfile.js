@@ -4,7 +4,7 @@
   
 const timestamps   = require('./assets/last-edited.json');
 
-let hostname = 'http://localhost:8080';
+let hostname = 'http://localhost';
 
 
 

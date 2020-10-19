@@ -1,0 +1,61 @@
+// Colors
+$blue-1:    #4C51BF;
+$blue-2:    #002555;
+$indigo:    #6610f2;
+$purple:    #6f42c1;
+$pink:      #e83e8c;
+$red:       #ff487e;
+$orange:    #ff5959;
+$yellow:    #ffc107;
+$green:     #40c185;
+$teal:      #20c997;
+$cyan:      #3bb4c1;
+$dark-1:    #1e1e27;
+
+$primary:     #319795;
+$secondary:   #506690;
+$soft-green:  #f0fcfa;
+$light:       #f7fafc;
+$dark:        #17141d;
+$success:     #40c185;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+$body-bg:             $white;
+$body-color:        #2e4257;
+$text-color:          $dark;
+$hover-color:         $red;
+$border-color:      #edf2f7!important;
+$border-color-dark: #242a35!important;
+$link-color:  theme-color("primary");
+$link-decoration: none;
+$link-hover-color:  darken($link-color, 5%);
+$link-hover-decoration: none;
+
+
+// Padding
+$input-btn-padding-y: .625rem;
+$input-btn-padding-x: .75rem;
+$btn-padding-y: $input-btn-padding-y;
+$btn-padding-x: $spacer*1.5;
+
+
+// Typography
+$font-family-base: 'Nunito', sans-serif;
+
+$font-weight-light: 400;
+$font-weight-normal: 600;
+$font-weight-bold: 700;
+
+$headings-font-weight: 700;
+$btn-font-weight: $font-weight-bold;
+$border-radius: .3125rem;
