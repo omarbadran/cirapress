@@ -1,0 +1,40 @@
+.navbar-nav {
+    display: flex;
+    flex-direction: column; 
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  
+    .nav-link {
+        padding-right: 0;
+        padding-left: 0;
+        font-size: 1.12rem;
+        font-weight: 600;
+    }
+  
+    .dropdown-menu {
+        position: static;
+        float: none;
+    }
+}
+
+.navbar-nav {
+    .nav-link {
+      color: $navbar-light-color;
+
+      @include hover-focus {
+        color: $navbar-light-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-light-disabled-color;
+      }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-light-active-color;
+    }
+  }

@@ -1,35 +1,53 @@
 .btn {
-  transition: all .2s ease-out;
-  @include border-radius($border-radius);
-    border-width:$border-width;
+	transition: all .2s ease-out;
+	border-width:$border-width;
+	@include border-radius($border-radius);
 
-  &:not(:disabled):hover {
-      transform: translateY(-1px);
-  }
+	&:not(:disabled):hover {
+		transform: translateY(-1px);
+	}
 
-  .btn-wrapper--label:not(:first-child) {
-    margin-left: ($spacer / 2);
-  }
+	.btn-wrapper--label:not(:first-child) {
+		margin-left: ($spacer / 2);
+	}
 
-  .btn-wrapper--label {
-    display: inline-block;
+	.btn-wrapper--label {
+		display: inline-block;
 
-    & + .btn-wrapper--icon {
-      margin-left: ($spacer / 2);
-    }
-  }
+		& + .btn-wrapper--icon {
+			margin-left: ($spacer / 2);
+		}
+	}
 }
 
 .btn-pill {
-  @include border-radius($border-radius-lg * 5);
+	@include border-radius($border-radius-lg * 5);
 }
 
 .btn-icon-transition {
-  transition: $transition-base;
+	transition: $transition-base;
 }
 
 .btn:hover {
-  .btn-icon-transition {
-    transform: scale(1.1);
-  }
+	.btn-icon-transition {
+		transform: scale(1.1);
+	}
+}
+
+@each $color, $value in $theme-colors {
+	.btn-#{$color} {
+		&:not(:disabled):active,
+		&:not(:disabled):focus,
+		&:not(:disabled):hover {
+			box-shadow: $box-shadow;
+		}
+	}
+}
+  
+@each $color, $value in $theme-colors {
+	.btn-outline-#{$color} {
+		&:not(:disabled):hover {
+			box-shadow: $box-shadow;
+		}
+	}
 }

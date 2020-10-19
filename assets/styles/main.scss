@@ -2,11 +2,26 @@
 @import "./vendor/bootstrap/variables";
 @import "./vendor/bootstrap/mixins";
 
+@import "./vendor/bootstrap/vendor/rfs";
+
 @import "./abstracts/variables";
 @import "./abstracts/mixins";
 
 @import "./vendor/bootstrap/bootstrap";
 
-@import "./base/fonts";
+@import "./base/typography";
+@import "./base/base";
 
 @import "./components/button";
+
+@import
+    'components/button',
+    'components/dividers',
+    'components/cards',
+    'components/navbar',
+    'components/tabs',
+    'components/accordions',
+    'components/dropdown',
+    'components/pagination',
+    'components/forms',
+    'components/sections';

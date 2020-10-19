@@ -2,7 +2,6 @@
 @mixin btn-soft-variant($parent, $color) {
     #{$parent} {
         background-color: $color !important;
-        
     }
 }
 

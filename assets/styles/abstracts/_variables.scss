@@ -30,24 +30,23 @@ $theme-colors: (
   "dark":       $dark
 );
 
-$body-bg:             $white;
-$body-color:        #2e4257;
-$text-color:          $dark;
-$hover-color:         $red;
-$border-color:      #edf2f7!important;
-$border-color-dark: #242a35!important;
-$link-color:  theme-color("primary");
-$link-decoration: none;
-$link-hover-color:  darken($link-color, 5%);
-$link-hover-decoration: none;
+$body-bg:                   $white;
+$text-color:                $dark;
+$hover-color:               $red;
+$body-color:              #2e4257;
+$border-color:            #edf2f7!important;
+$border-color-dark:       #242a35!important;
+$link-hover-decoration:     none;
+$link-decoration:           none;
+$link-color:                theme-color("primary");
+$link-hover-color:          darken($link-color, 5%);
 
-
-// Padding
-$input-btn-padding-y: .625rem;
-$input-btn-padding-x: .75rem;
-$btn-padding-y: $input-btn-padding-y;
-$btn-padding-x: $spacer*1.5;
-
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1298px
+);
 
 // Typography
 $font-family-base: 'Nunito', sans-serif;
@@ -59,3 +58,23 @@ $font-weight-bold: 700;
 $headings-font-weight: 700;
 $btn-font-weight: $font-weight-bold;
 $border-radius: .3125rem;
+
+
+// Shadow
+$box-shadow-sm:     0 2px 4px 0 rgba(147, 150, 171, 0.1);
+$box-shadow:        0 2px 8px 0 rgba(147, 150, 171, 0.1);
+$box-shadow-lg:     0 5px 15px 0 rgba(147, 150, 171, 0.1);
+
+
+// Padding
+$spacer: 12px;
+
+$input-btn-padding-y: .625rem;
+$input-btn-padding-x: .75rem;
+$btn-padding-y: $input-btn-padding-y;
+$btn-padding-x: $spacer*1.5;
+
+$navbar-padding-y: 1rem;
+$navbar-padding-x: 1rem;
+$nav-link-padding-x: .75rem;
+$navbar-nav-link-padding-x:  .75rem;
