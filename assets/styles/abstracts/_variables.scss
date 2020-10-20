@@ -50,6 +50,13 @@ $container-max-widths: (
 
 $navbar-dark-color:         rgba($white, .65);
 $navbar-dark-hover-color:   rgba($white, .85);
+$navbar-dark-active-color:  $navbar-dark-color;
+
+
+
+// Options
+$enable-shadows:                              true;
+$enable-responsive-font-sizes:                true;
 
 // Typography
 $font-family-base: 'Nunito', sans-serif;
@@ -81,3 +88,22 @@ $navbar-padding-y: 1rem;
 $navbar-padding-x: 1rem;
 $nav-link-padding-x: .75rem;
 $navbar-nav-link-padding-x:  .75rem;
+
+
+// Dropdown
+$dropdown-padding-y:                1rem;
+$dropdown-border-color:             $border-color;
+$dropdown-divider-bg:               $dropdown-border-color;
+$dropdown-box-shadow:               $box-shadow-lg;
+$dropdown-font-size:                15px;
+
+$dropdown-link-color:               rgba($body-color,.6);
+$dropdown-link-hover-color:         $primary;
+$dropdown-link-hover-bg:            none;
+
+$dropdown-link-active-color:        $primary;
+$dropdown-link-active-bg:           rgba($component-active-bg,.1);
+
+$dropdown-link-disabled-color:      rgba($body-color,.25);
+
+$dropdown-header-color:             $headings-color;

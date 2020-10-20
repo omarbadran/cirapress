@@ -50,6 +50,10 @@ const path = {
                 "source": "assets/scripts/pages/*.js",
                 "dist": "dist/scripts/pages/"
             },
+            {
+                "source": "assets/scripts/vendor/*.js",
+                "dist": "dist/scripts/vendor/"
+            },
         ]
     },
     "styles" : {

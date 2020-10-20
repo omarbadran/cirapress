@@ -20,11 +20,18 @@
                 <a class="navbar-brand" href="#">CiraPress</a>
 
                 <div class="collapse navbar-collapse justify-content-between">
-                    <ul class="navbar-nav">
-                        <li class="nav-item swap-link">
-                            <a href="#" class="nav-link">Home</a>
-                        </li>
-                    </ul>
+                    <?php
+                        wp_nav_menu([
+                            'theme_location'  => 'primary',
+                            'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+                            'container'       => 'ul',
+                            'container_class' => 'collapse navbar-collapse',
+                            'container_id'    => 'bs-example-navbar-collapse-1',
+                            'menu_class'      => 'navbar-nav mr-auto',
+                            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                            'walker'          => new WP_Bootstrap_Navwalker(),
+                        ]);
+                    ?>
                     
                     <ul class="navbar-nav">
                         <li class="nav-item swap-link">
