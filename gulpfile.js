@@ -40,12 +40,30 @@ const path = {
         "dist":   "dist/",
     },
     "scripts" : {
-        "source": "assets/scripts/",
-        "dist":   "dist/scripts/",
+        "base": "assets/scripts/",
+        "files": [
+            {
+                "source": "assets/scripts/*.js",
+                "dist": "dist/scripts/"
+            },
+            {
+                "source": "assets/scripts/pages/*.js",
+                "dist": "dist/scripts/pages/"
+            },
+        ]
     },
     "styles" : {
-        "source": "assets/styles/",
-        "dist":   "dist/styles/",
+        "base": "assets/styles/",
+        "files": [
+            {
+                "source": "assets/styles/*.scss",
+                "dist": "dist/styles/"
+            },
+            {
+                "source": "assets/styles/pages/*.scss",
+                "dist": "dist/styles/pages/"
+            },
+        ]
     },
     "fonts" : {
         "source": "assets/fonts/",
@@ -94,15 +112,30 @@ const updateTimestamp = (stamp) => {
 //  */
 gulp.task('styles', () => {
     updateTimestamp('css');
-    
-    return gulp.src(path.styles.source + '**/*.scss')
-        .pipe(gulpif(!production, plumber()))
-        .pipe(gulpif(!production, sourcemaps.init()))
-        .pipe(sass())
-        .pipe(postcss([ autoprefixer(), cssnano() ]))
-        .pipe(gulpif(!production, sourcemaps.write()))
-        .pipe(gulp.dest(path.styles.dist))
-        .pipe(browsersync.stream({match: '**/*.css'}));
+        
+    let stream;
+
+    path.styles.files.forEach(function (item) {
+  
+      stream = gulp.src(item.source)
+
+                .pipe(gulpif(!production, plumber()))
+
+                .pipe(gulpif(!production, sourcemaps.init()))
+
+                .pipe(sass())
+
+                .pipe(postcss([ autoprefixer(), cssnano() ]))
+
+                .pipe(gulpif(!production, sourcemaps.write()))
+
+                .pipe(gulp.dest(item.dist))
+
+                .pipe(browsersync.stream({match: '**/*.css'}));
+      
+    });
+
+    return stream;
 });
   
 /**
@@ -112,20 +145,34 @@ gulp.task('styles', () => {
  */
 gulp.task('scripts', () => {
     updateTimestamp('js');
+    
+    let stream;
 
-    return gulp.src(path.scripts.source + '**/*.js')
-        .pipe(gulpif(!production, sourcemaps.init()))
-        .pipe(babel({
-            presets: ['@babel/env']
-        }))      
-        .pipe(uglify())
-        .on('error', function(err) {
-            beeper();
-            console.log(err);
-        })
-        .pipe(gulpif(!production, sourcemaps.write()))
-        .pipe(gulp.dest(path.scripts.dist))
-        .pipe(browsersync.stream({match: '**/*.js'}))
+    path.scripts.files.forEach(function (item) {
+  
+      stream = gulp.src(item.source)
+      
+                .pipe(gulpif(!production, sourcemaps.init()))
+
+                .pipe(babel({
+                    presets: ['@babel/env']
+                }))
+                
+                .pipe(uglify())
+                
+                .on('error', function(err) {
+                    beeper();
+                    console.log(err);
+                })
+
+                .pipe(gulpif(!production, sourcemaps.write()))
+
+                .pipe(gulp.dest(item.dist))
+
+                .pipe(browsersync.stream({match: '**/*.js'}))
+    });
+
+    return stream;
 });
 
 /**
@@ -250,8 +297,8 @@ gulp.task('watch', () => {
     });
 
     // watch these files
-    gulp.watch(path.styles.source + '**/*', gulp.task('styles'));
-    gulp.watch(path.scripts.source + '**/*', gulp.task('scripts'));
+    gulp.watch(path.styles.base + '**/*', gulp.task('styles'));
+    gulp.watch(path.scripts.base + '**/*', gulp.task('scripts'));
     gulp.watch(path.fonts.source + '**/*', gulp.task('fonts'));
     gulp.watch(path.images.source + '**/*', gulp.task('images'));
     gulp.watch(path.sprite.source + '*', gulp.task('svgstore'));
