@@ -48,6 +48,9 @@ $container-max-widths: (
     xl: 1298px
 );
 
+$navbar-dark-color:         rgba($white, .65);
+$navbar-dark-hover-color:   rgba($white, .85);
+
 // Typography
 $font-family-base: 'Nunito', sans-serif;
 

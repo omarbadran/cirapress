@@ -6,10 +6,12 @@
     list-style: none;
   
     .nav-link {
-        padding-right: 0;
-        padding-left: 0;
-        font-size: 1.12rem;
-        font-weight: 600;
+        svg {
+            fill: currentColor;
+            width: 20px;
+            margin-right: .5rem!important;
+            font-weight: 100;        
+        }
     }
   
     .dropdown-menu {
@@ -18,23 +20,7 @@
     }
 }
 
-.navbar-nav {
-    .nav-link {
-      color: $navbar-light-color;
-
-      @include hover-focus {
-        color: $navbar-light-hover-color;
-      }
-
-      &.disabled {
-        color: $navbar-light-disabled-color;
-      }
-    }
-
-    .show > .nav-link,
-    .active > .nav-link,
-    .nav-link.show,
-    .nav-link.active {
-      color: $navbar-light-active-color;
-    }
-  }
+.navbar-brand {
+    margin-right: 1.25rem;
+    font-weight: 800;
+}
