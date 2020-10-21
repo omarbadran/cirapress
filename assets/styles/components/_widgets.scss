@@ -1,0 +1,6 @@
+// Mene widget
+.widget_nav_menu {
+    ul {
+        @extend .list-unstyled;
+    }
+}

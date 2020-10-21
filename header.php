@@ -17,7 +17,7 @@
     <header class="nav-wrap bg-dark fixed-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark px-lg-0">
-                <a class="navbar-brand" href="#">CiraPress</a>
+                <a class="navbar-brand" href="<?php echo home_url() ?>">CiraPress</a>
 
                 <div class="collapse navbar-collapse justify-content-between">
                     <?php
@@ -48,3 +48,5 @@
             </nav>
         </div>
     </header>
+
+    <main role="main">

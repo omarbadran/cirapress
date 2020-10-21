@@ -5,3 +5,7 @@ body {
 .las, img, svg {
     vertical-align: middle;
 }
+
+body > main {
+    min-height: 500px;
+}

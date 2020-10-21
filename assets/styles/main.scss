@@ -6,6 +6,8 @@
 @import "./abstracts/mixins";
 
 @import "./vendor/bootstrap/bootstrap";
+@import "./vendor/line-awesome/line-awesome.scss";
+
 
 @import "./base/typography";
 @import "./base/base";
@@ -22,7 +24,8 @@
     'components/dropdown',
     'components/pagination',
     'components/forms',
+    'components/widgets',
     'components/sections';
 
 
-@import "./vendor/line-awesome/line-awesome.scss";
+@import "./layout/footer";

@@ -10,3 +10,40 @@ add_action('after_setup_theme', function() {
         'primary' => __('Nav: Primary', 'cirapress'),
     ]);
 });
+
+/**
+ * Register sidebars
+ *
+ * @package cirapress
+ */
+add_action( 'widgets_init', function () {
+    register_sidebar([
+        'name'          => __('Footer: Left', 'cirapress'),
+        'id'            => 'footer-left',
+        'description'   => __('Left footer column.', 'cirapress'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h6 class="title">',
+        'after_title'   => '</h6>',
+    ]);
+
+    register_sidebar([
+        'name'          => __('Footer: Center', 'cirapress'),
+        'id'            => 'footer-center',
+        'description'   => __('Center footer column.', 'cirapress'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h6 class="title">',
+        'after_title'   => '</h6>',
+    ]);
+
+    register_sidebar([
+        'name'          => __('Footer: Right', 'cirapress'),
+        'id'            => 'footer-right',
+        'description'   => __('Right footer column.', 'cirapress'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h6 class="title">',
+        'after_title'   => '</h6>',
+    ]);
+});
