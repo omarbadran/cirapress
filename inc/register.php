@@ -47,3 +47,32 @@ add_action( 'widgets_init', function () {
         'after_title'   => '</h6>',
     ]);
 });
+
+/**
+ * Register product post type
+ *
+ * @package cirapress
+ */
+add_action('init', function () {
+    $args = [
+        'public'            => true,
+        'label'             => __('Products', 'cirapress'),
+        'menu_icon'         => 'dashicons-money-alt',
+        'show_in_rest'      => true,
+        'supports' =>       [
+            'title',
+            'custom-fields',
+            'editor',
+            'thumbnail',
+            'comments'
+        ]
+    ];
+
+    register_post_type('product', $args);
+
+    register_post_meta('product', 'product_id', [
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'string',
+    ]);
+});

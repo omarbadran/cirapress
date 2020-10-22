@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Enqueue scripts and styles
+ * Front-end scripts and styles
  * 
- * @package cirapress
+ * @package CiraPress
  */
 add_action('wp_enqueue_scripts', function() {
 	$timestamps = CiraPress\assets_timestamp();
@@ -41,3 +41,35 @@ add_action('wp_enqueue_scripts', function() {
 	}
 });
 
+/**
+ * Gutenberg scripts
+ * 
+ * @package CiraPress
+ */
+add_action('enqueue_block_editor_assets', function () {
+	$timestamps = CiraPress\assets_timestamp();
+
+	wp_enqueue_script(
+		'cirapress-js',
+		get_template_directory_uri() . '/dist/scripts/gutenberg.js',
+		[],
+		$timestamps['js'],
+		true
+	);
+});
+
+/**
+ * Gutenberg styles
+ * 
+ * @package CiraPress
+ */
+add_action('enqueue_block_editor_assets', function () {
+	$timestamps = CiraPress\assets_timestamp();
+
+	wp_enqueue_style(
+		'cirapress-gutenberg-style',
+		get_template_directory_uri() . '/dist/styles/gutenberg.css',
+		[],
+		$timestamps['css']
+	);
+});
