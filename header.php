@@ -36,7 +36,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item swap-link">
                             <a class="nav-link" href="#">
-                                <i class="las la-user mr-2" style="font-size:20px;"></i>
+                                <i class="las la-user mr-2" style="font-size:22px;"></i>
                             </a>
                         </li>
 
