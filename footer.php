@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <span class="pr-5">© 2020 CiraPress</span>
+                        <span class="pr-4">© 2020 CiraPress</span>
                         <span class="pr-2"><a href="#">Privacy policy</a></span>
                         <span class="pr-2"><a href="#">Terms of use</a></span>
                     </div>

@@ -75,4 +75,28 @@ add_action('init', function () {
         'single' => true,
         'type' => 'string',
     ]);
+
+    register_post_meta('product', 'product_info', [
+        'show_in_rest' => false,
+        'single' => true,
+        'type' => 'array',
+    ]);
+
+    register_post_meta('product', 'product_plans', [
+        'show_in_rest' => false,
+        'single' => true,
+        'type' => 'array',
+    ]);
+
+    register_post_meta('product', 'product_features', [
+        'show_in_rest' => false,
+        'single' => true,
+        'type' => 'array',
+    ]);
+
+    register_post_meta('product', 'product_reviews', [
+        'show_in_rest' => false,
+        'single' => true,
+        'type' => 'array',
+    ]);
 });

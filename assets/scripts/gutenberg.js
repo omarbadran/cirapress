@@ -21,8 +21,7 @@
         }),
         withSelect(function(select, props) {
             return {
-                metaFieldValue: select('core/editor')
-                    .getEditedPostAttribute('meta')[props.fieldName],
+                metaFieldValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName]
             }
         })
     )(function(props) {
