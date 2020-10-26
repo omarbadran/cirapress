@@ -40,6 +40,7 @@ $link-hover-decoration:     none;
 $link-decoration:           none;
 $link-color:                theme-color("primary");
 $link-hover-color:          darken($link-color, 5%);
+$headings-color:          #2C3038;
 
 $container-max-widths: (
     sm: 540px,
