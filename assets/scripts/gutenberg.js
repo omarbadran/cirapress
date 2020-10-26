@@ -1,52 +1,101 @@
-(function(wp) {
-    const registerPlugin = wp.plugins.registerPlugin;
-    const el = wp.element.createElement;
-    const Text = wp.components.TextControl;
-    const withSelect = wp.data.withSelect;
-    const withDispatch = wp.data.withDispatch;
-    const compose = wp.compose.compose;
-    const PluginDocumentSettingPanel = wp.editPost.PluginDocumentSettingPanel;
+const registerPlugin = wp.plugins.registerPlugin;
+const compose = wp.compose.compose;
+const { Button, TextControl } = wp.components;
+const { PluginDocumentSettingPanel } = wp.editPost;
+const { withSelect, withDispatch } = wp.data;
 
-    const MetaBlockField = compose(
-        withDispatch(function(dispatch, props) {
-            return {
-                setMetaFieldValue: function(value) {
-                    dispatch('core/editor').editPost({
-                        meta: {
-                            [props.fieldName]: value
-                        }
-                    });
-                }
-            }
-        }),
-        withSelect(function(select, props) {
-            return {
-                metaFieldValue: select('core/editor').getEditedPostAttribute('meta')[props.fieldName]
-            }
-        })
-    )(function(props) {
-        return el(props.type, {
-            label: props.label,
-            value: props.metaFieldValue,
-            onChange: function(content) {
-                props.setMetaFieldValue(content);
-            },
-        });
-    });
+/** 
+ * The panel
+ */
+let freemiusIntegration = (props) => {
+    return (
+        <PluginDocumentSettingPanel title="Freemius Integration" className="freemius-integration" name="freemius-integration">
+            <TextControl
+                label="Product ID"
+                value={props.product_id}
+                onChange={(value) => props.setMetaValue('product_id', value)}
+            />
 
-    registerPlugin('document-setting-test', {
-        render: function() {
-            return el(PluginDocumentSettingPanel, {
-                    className: 'my-document-setting-plugin',
-                    icon: 'money-alt',
-                    title: 'Freemius Integration',
-                },
-                el(MetaBlockField, {
-                    type: Text,
-                    label: 'Product ID',
-                    fieldName: 'product_id'
-                })
-            );
+            <Button isPrimary onClick={() => synchronizeProduct(props.product_id)}>
+                Synchronize
+            </Button>
+        </PluginDocumentSettingPanel>
+    )
+}
+
+/** 
+ * Compose with select and dispatch
+ */
+freemiusIntegration = compose(
+    withDispatch(function(dispatch) {
+        return {
+            setMetaValue: function(field, value) {
+                dispatch('core/editor').editPost({
+                    meta: {
+                        [field]: value
+                    }
+                });
+            }
         }
+    }),
+    withSelect(function(select) {
+        return {
+            product_id: select('core/editor').getEditedPostAttribute('meta')['product_id']
+        }
+    })
+)(freemiusIntegration)
+
+
+/** 
+ * Register Plugin
+ */
+registerPlugin('freemius-integration', {
+    render: freemiusIntegration,
+    icon: 'smiley',
+});
+
+/** 
+ * synchronize the data
+ */
+let synchronizeProduct = (id) => {
+    let status = wp.data.select('core/editor').getCurrentPost()['status'];
+    
+    if (status == 'auto-draft') {
+        return wp.data.dispatch('core/notices').createNotice(
+            'error',
+            'Save the post first asshole',
+            {
+                isDismissible: true,
+            }
+        );
+    }
+    
+    wp.ajax.post("sync_product_data", {
+        post: wp.data.select('core/editor').getCurrentPost().id,
+        product: id
+    }).done(res => {
+        onSucess(res);
+    }).fail(res => {
+        onError(res);
     });
-})(window.wp);
+
+    let onSucess = () => {
+        wp.data.dispatch('core/notices').createNotice(
+            'success',
+            'Data Synchronized.',
+            {
+                isDismissible: true,
+            }
+        );
+    }
+
+    let onError = (data) => {
+        wp.data.dispatch('core/notices').createNotice(
+            'error',
+            data["error"]['message'],
+            {
+                isDismissible: true,
+            }
+        );
+    }
+}

@@ -1,6 +1,6 @@
 .section-footer {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
     color: $light;
 
     & h6 {
@@ -30,18 +30,6 @@
     background-color: #fff;
     -webkit-box-shadow: 0 0 1px rgba(50,58,70,.1);
     box-shadow: 0 0 1px rgba(50,58,70,.1);
-}
-
-.section-footer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(../../dist/images/bg-3.png);
-    opacity: .65;
-    background-size: cover;
 }
 
 .footer-bottom {

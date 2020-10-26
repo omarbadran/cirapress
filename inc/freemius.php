@@ -5,7 +5,7 @@
  * @package cirapress
  */
 
-namespace CiraPress;
+namespace CiraPress\Freemius;
 
 require_once 'vendor/freemius/Freemius.php';
 
@@ -19,10 +19,14 @@ $freemius = new \Freemius_Api('developer', '9577', 'pk_b34b8fef836df86133740ca3f
  * @access public
  * @return array
  */
-function fs_get_product_info($id) {
+function get_product_info($id) {
     global $freemius;
 
-    $result = (array) $freemius->Api("/plugins/$id.json");
+    $result = $freemius->Api("/plugins/$id.json");
+
+    if ( is_object($result) ) {
+        $result = (array) $result;
+    }
 
     return $result;
 }
@@ -34,7 +38,7 @@ function fs_get_product_info($id) {
  * @access public
  * @return array
  */
-function fs_get_product_plans($id) {
+function get_product_plans($id) {
     global $freemius;
 
     $result = $freemius->Api("/plugins/$id/plans.json");
@@ -61,7 +65,7 @@ function fs_get_product_plans($id) {
  * @access public
  * @return array
  */
-function fs_get_product_features($id) {
+function get_product_features($id) {
     global $freemius;
 
     $result = $freemius->Api("/plugins/$id/features.json");
@@ -80,7 +84,7 @@ function fs_get_product_features($id) {
  * @access public
  * @return array
  */
-function fs_get_product_reviews($id) {
+function get_product_reviews($id) {
     global $freemius;
 
     $result = $freemius->Api("/plugins/$id/reviews.json");

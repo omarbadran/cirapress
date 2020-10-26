@@ -25,11 +25,11 @@
                 </div>
         </section>
 
-        <section class="footer-bottom border-top border-dark white pt-4">
+        <section class="footer-bottom border-top border-dark pt-3 mt-3">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <span class="pr-4">© 2020 CiraPress</span>
+                        <span class="pr-4">©2020 CiraPress</span>
                         <span class="pr-2"><a href="#">Privacy policy</a></span>
                         <span class="pr-2"><a href="#">Terms of use</a></span>
                     </div>

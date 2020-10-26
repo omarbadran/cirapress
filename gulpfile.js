@@ -159,7 +159,8 @@ gulp.task('scripts', () => {
                 .pipe(gulpif(!production, sourcemaps.init()))
 
                 .pipe(babel({
-                    presets: ['@babel/env']
+                    presets: ['@babel/env'],
+                    plugins: ['transform-react-jsx']
                 }))
                 
                 .pipe(uglify())
