@@ -8,7 +8,7 @@
 namespace CiraPress;
 
 /**
- * sync product info
+ * Synchronize product data
  *
  * @package cirapress
  */
@@ -17,7 +17,7 @@ add_action('wp_ajax_sync_product_data', function () {
     $product = $_POST['product'] ?? null;
 
     if ( ! current_user_can('edit_posts') ) {
-        die('fuck of');
+        die();
     }
 
     $data = sync_product_data($post, $product);

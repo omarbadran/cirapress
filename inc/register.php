@@ -64,7 +64,11 @@ add_action('init', function () {
             'custom-fields',
             'editor',
             'thumbnail',
-            'comments'
+            'comments',
+            'excerpt'
+        ],
+        'taxonomies' => [
+            'category'
         ]
     ];
 

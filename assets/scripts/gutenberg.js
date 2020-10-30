@@ -55,7 +55,7 @@ registerPlugin('freemius-integration', {
 });
 
 /** 
- * synchronize the data
+ * Synchronize product data
  */
 let synchronizeProduct = (id) => {
     let status = wp.data.select('core/editor').getCurrentPost()['status'];
