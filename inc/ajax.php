@@ -2,7 +2,7 @@
 /**
  * Ajax actions
  *
- * @package cirapress
+ * @package CiraPress
  */
 
 namespace CiraPress;
@@ -10,7 +10,7 @@ namespace CiraPress;
 /**
  * Synchronize product data
  *
- * @package cirapress
+ * @package CiraPress
  */
 add_action('wp_ajax_sync_product_data', function () {
     $post = $_POST['post'] ?? null;

@@ -2,7 +2,7 @@
 /**
  * Products
  *
- * @package cirapress
+ * @package CiraPress
  */
 
 namespace CiraPress\Products;
@@ -30,7 +30,6 @@ function query($col = "4"){
         
         $id = get_the_ID();
         $class = join(' ', get_post_class("post clearfix col-lg-$col"));
-        $title = get_the_title();
         $url = esc_url(get_permalink());
         
         $thumb = get_the_post_thumbnail($id, 'medium', [

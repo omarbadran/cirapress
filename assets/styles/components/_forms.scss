@@ -99,6 +99,16 @@
     }
 }
 
+.custom-control-label {
+    font-size: 15px;
+    line-height: 28px;
+}
+
+.label-price {
+    font-weight: 700;
+    font-size: 15px;
+}
+
 @include media-breakpoint-down(sm) {
     .form-control-lg {
         font-size: $font-size-base;

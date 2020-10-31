@@ -3,7 +3,7 @@
 /**
  * Register menu positions
  *
- * @package cirapress
+ * @package CiraPress
  */
 add_action('after_setup_theme', function() {
     register_nav_menus([
@@ -14,7 +14,7 @@ add_action('after_setup_theme', function() {
 /**
  * Register sidebars
  *
- * @package cirapress
+ * @package CiraPress
  */
 add_action( 'widgets_init', function () {
     register_sidebar([
@@ -51,7 +51,7 @@ add_action( 'widgets_init', function () {
 /**
  * Register product post type
  *
- * @package cirapress
+ * @package CiraPress
  */
 add_action('init', function () {
     $args = [
@@ -68,7 +68,8 @@ add_action('init', function () {
             'excerpt'
         ],
         'taxonomies' => [
-            'category'
+            'category',
+            'post_tag'
         ]
     ];
 

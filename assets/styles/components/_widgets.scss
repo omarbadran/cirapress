@@ -4,3 +4,30 @@
         @extend .list-unstyled;
     }
 }
+
+.sidebar-widget {
+    padding: 25px 20px;
+    border: $border-width solid $border-color;
+    margin-bottom: $spacer * 1.5;
+    @include border-radius($border-radius);
+
+    h3 {
+        line-height: 2rem;
+    }
+}
+
+.sidebar-widget-title--sm {
+    display: block;
+    font-weight: 700;
+    color: $text-color;
+    margin-bottom: 10px;
+}
+
+.sidebar-widget ul li {
+    font-size: 15px;
+    line-height: 28px;
+    padding: 0;
+    padding-left: 5px;
+    list-style: none;
+    font-weight: 600;
+}

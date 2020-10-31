@@ -42,12 +42,6 @@ $link-color:                theme-color("primary");
 $link-hover-color:          darken($link-color, 5%);
 $headings-color:          #2C3038;
 
-$container-max-widths: (
-    sm: 540px,
-    md: 720px,
-    lg: 960px,
-    xl: 1298px
-);
 
 $navbar-dark-color:         rgba($white, .65);
 $navbar-dark-hover-color:   rgba($white, .85);
@@ -66,21 +60,42 @@ $font-weight-light: 400;
 $font-weight-normal: 600;
 $font-weight-bold: 700;
 
+$font-weight-base:	$font-weight-normal;
+$line-height-base:	1.8;
+
+
 $headings-font-weight: 700;
 $btn-font-weight: $font-weight-bold;
 $border-radius: .3125rem;
 $headings-margin-bottom: 1rem;
-$headings-line-height:  1.4;
+$headings-line-height:  1.6;
 
+$paragraph-margin-bottom:   2rem;
 
 // Shadow
 $box-shadow-sm:     0 2px 4px 0 rgba(147, 150, 171, 0.1);
 $box-shadow:        0 2px 8px 0 rgba(147, 150, 171, 0.1);
 $box-shadow-lg:     0 5px 15px 0 rgba(147, 150, 171, 0.1);
-
+$btn-box-shadow: 	none;
 
 // Padding
-$spacer: 12px;
+$spacer: 15px;
+
+
+$spacers: (
+	0: 0,
+	1: ($spacer * .25),
+	2: ($spacer * .5),
+	3: $spacer,
+	4: ($spacer * 1.5),
+	5: ($spacer * 3),
+	6: ($spacer * 4),
+	7: ($spacer * 5),
+	8: ($spacer * 7),
+	9: ($spacer * 9),
+	10: ($spacer * 10)
+);
+
 
 $input-btn-padding-y: .625rem;
 $input-btn-padding-x: .75rem;
@@ -110,3 +125,31 @@ $dropdown-link-active-bg:           rgba($component-active-bg,.1);
 $dropdown-link-disabled-color:      rgba($body-color,.25);
 
 $dropdown-header-color:             $headings-color;
+
+// Forms
+$input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+$form-text-margin-top:                  .25rem;
+
+$form-check-input-gutter:               1.25rem;
+$form-check-input-margin-y:             .3rem;
+$form-check-input-margin-x:             .25rem;
+
+$form-check-inline-margin-x:            .75rem;
+$form-check-inline-input-margin-x:      .3125rem;
+
+$form-grid-gutter-width:                16px;
+$form-group-margin-bottom:              1rem;
+
+$custom-forms-transition:               background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+$custom-control-gutter:                 .5rem;
+$custom-control-spacer-x:               1rem;
+
+$custom-control-indicator-size:         1.25rem;
+$custom-control-indicator-bg:           $input-bg;
+
+$custom-control-indicator-bg-size:      50% 50%;
+$custom-control-indicator-box-shadow:   $input-box-shadow;
+$custom-control-indicator-border-color: darken($input-border-color,10%);
+$custom-control-indicator-border-width: $input-border-width;

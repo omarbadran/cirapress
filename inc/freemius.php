@@ -2,7 +2,7 @@
 /**
  * Freemius Integration
  *
- * @package cirapress
+ * @package CiraPress
  */
 
 namespace CiraPress\Freemius;

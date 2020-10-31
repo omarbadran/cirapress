@@ -2,7 +2,7 @@
 /**
  * Helper functions
  *
- * @package cirapress
+ * @package CiraPress
  */
 
 namespace CiraPress;

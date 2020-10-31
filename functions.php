@@ -2,7 +2,7 @@
 /**
  * Include PHP files, nothing else.
  *
- * @package cirapress
+ * @package CiraPress
  */
 
 require_once 'inc/freemius.php';
