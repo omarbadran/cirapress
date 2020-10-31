@@ -64,7 +64,6 @@ add_action('init', function () {
             'custom-fields',
             'editor',
             'thumbnail',
-            'comments',
             'excerpt'
         ],
         'taxonomies' => [

@@ -22,7 +22,7 @@
                         'class' => 'rounded border'
                     ]) ?>
 
-                    <?php the_title('<h1 class="mt-4 mb-5">' , '</h1>') ?>
+                    <h2 class="mt-4 mb-4">About the Product</h2>
 
                     <?php the_content() ?>
                 </div>
@@ -33,7 +33,7 @@
 
                         <!-- Purchase  -->
                         <div class="sidebar-widget">
-                            <?php the_title('<h3 class="mb-4 h4">' , '</h3>') ?>
+                            <?php the_title('<h1 class="mb-4 h4">' , '</h1>') ?>
                                                         
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-12">
