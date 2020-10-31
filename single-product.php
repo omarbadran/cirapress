@@ -17,27 +17,27 @@
             <div class="row">
 
                 <!-- Product info -->
-                <div class="product-info col pr-0">
+                <div class="product-info product-info col-md-5 col-lg-9 pr-md-5">
                     <?php the_post_thumbnail('hero_sm', [
                         'class' => 'rounded border'
                     ]) ?>
 
-                    <?php the_title('<h1 class="mt-4 mb-4">' , '</h1>') ?>
+                    <?php the_title('<h1 class="mt-4 mb-5">' , '</h1>') ?>
 
                     <?php the_content() ?>
                 </div>
 
                 <!-- Sidebar -->
-                <div class="col-md-5 col-lg-4 pl-lg-6">
+                <div class="col-md-5 col-lg-3 pl-md-0">
                     <div class="sidebar sticky-lg-top sticky-md-top">
 
                         <!-- Purchase  -->
                         <div class="sidebar-widget">
                             <?php the_title('<h3 class="mb-4 h4">' , '</h3>') ?>
-
+                                                        
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-12">
-                                    <div class="custom-control custom-radio mt-3 mb-2 d-flex justify-content-between align-items-center">
+                                    <div class="custom-control custom-radio mb-2 d-flex justify-content-between align-items-center">
                                         <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                                         <label class="custom-control-label" for="customRadio1">Single Site</label>
                                         <div class="label-price">$39</div>
@@ -57,7 +57,7 @@
                                 </div>
                             </div>
 
-                            <button class="btn btn-primary btn-block" type="button">
+                            <button class="btn btn-success btn-block" type="button">
                                 Purchase → <span class="price"> $39</span>
                             </button>
                         </div>
@@ -106,11 +106,11 @@
 
                                     <div class="col-12 p-0">
                                         <div class="d-flex flex-row justify-content-between">
-                                            <span class="small">Created</span>
+                                            <span class="small">Released</span>
                                             <strong class="small text-dark"><?php echo $created ?></strong>
                                         </div>
                                         <div class="d-flex flex-row justify-content-between">
-                                            <span class="small">Updated</span>
+                                            <span class="small">Last update</span>
                                             <strong class="small text-dark"><?php echo $updated ?></strong>
                                         </div>
                                     </div>
