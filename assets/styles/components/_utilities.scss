@@ -192,3 +192,10 @@ img {
 .badge {
     vertical-align: middle;
 }
+
+.intro {
+    padding: 75px 45px;
+    @include border-radius($border-radius-lg * 3);
+    position: relative;
+    background-color: $soft-green;
+}

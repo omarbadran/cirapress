@@ -15,6 +15,6 @@
 
 <?php get_header(); ?>
     <div class="container mt-5">
-        <?php CiraPress\Products\query(3); ?>
+        <?php CiraPress\Products\query(); ?>
     </div>
 <?php get_footer(); ?>

@@ -17,23 +17,23 @@
             <div class="row">
 
                 <!-- Product info -->
-                <div class="product-info product-info col-md-5 col-lg-9 pr-md-5">
+                <div class="product-info product-info col-md-5 col-lg-9 pr-md-6">
                     <?php the_post_thumbnail('hero_sm', [
                         'class' => 'rounded border'
                     ]) ?>
 
-                    <h2 class="mt-4 mb-4">About the Product</h2>
+                    <h2 class="h1 mt-4 mb-4">About the Product</h2>
 
                     <?php the_content() ?>
                 </div>
 
                 <!-- Sidebar -->
-                <div class="col-md-5 col-lg-3 pl-md-0">
+                <div class="col-md-5 col-lg-3 pl-md-0 pr-md-0 ml-md-n2">
                     <div class="sidebar sticky-lg-top sticky-md-top">
 
                         <!-- Purchase  -->
                         <div class="sidebar-widget">
-                            <?php the_title('<h1 class="mb-4 h4">' , '</h1>') ?>
+                            <?php the_title('<h1 class="mb-4 h2">' , '</h1>') ?>
                                                         
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-12">
@@ -120,6 +120,7 @@
 
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

@@ -27,7 +27,8 @@ function query($col = "4"){
     
     while ( have_posts() ) {
         the_post();
-        
+
+        $title = get_the_title();
         $id = get_the_ID();
         $class = join(' ', get_post_class("post clearfix col-lg-$col"));
         $url = esc_url(get_permalink());
@@ -39,7 +40,6 @@ function query($col = "4"){
         $price = get_product_price($id);
 
         $excerpt = get_the_excerpt();
-        $info = get_post_meta($id, 'product_info', true);
 
         echo "<article id='post-$id' class='$class'>";
             echo "<div class='card item-card h-100 border-0'>";
@@ -51,7 +51,7 @@ function query($col = "4"){
                     echo "<div class='d-flex justify-content-between align-items-start'>";
                         echo "<div class='item-title'>";
                             echo "<h3 class='h5 mb-0 post-title'>";
-                                echo "<a href='$url'>$info[title]</a>";
+                                echo "<a href='$url'>$title</a>";
                             echo "</h3>";
                             
                             echo "<p class='text-muted small mt-3'>$excerpt</p>";
