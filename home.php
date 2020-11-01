@@ -15,15 +15,14 @@
 
 <?php get_header(); ?>
 
-<div class="wrapper pt-6">
+<div class="wrapper">
     <div class="container">
         <!-- Intro -->
-        <div class="intro poition-relative">
+        <div class="intro poition-relative rounded mt-5">
             <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-8">
-                    <h1 class="display-4">Quality WordPress Plugins, Trusted by thousands of users</h1>
-                    <p class="lead">Find the perfect wordpress plugin to <br>
-                        bring your project to life</p>
+                    <h1 class="mb-5">Quality WordPress Plugins, Trusted by thousands of users</h1>
+                    <p class="lead">Find the perfect wordpress plugin to <br>bring your project to life</p>
                     <div class="row">
                         <div class="col-md-7">
                             <?php get_search_form() ?>
@@ -37,6 +36,17 @@
             </div>
         </div>
         
+        <!-- Latest products -->
+        <div class="row mb-4 mt-5 d-flex justify-content-between align-items-center">
+            <div class="col-md-8">
+                <h4 class="mb-0">Latest Products</h4>
+            </div>
+            <div class="col-md-4"> <a href="#" class="btn btn-link float-right">Explore all <i class="las la-long-arrow-alt-right"></i> </a> </div>
+        </div>
+
+        <div class="row">
+            <?php CiraPress\Products\query(); ?>
+        </div>
     </div>
 </div>
 

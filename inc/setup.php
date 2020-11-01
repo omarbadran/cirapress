@@ -58,7 +58,7 @@ add_action('after_setup_theme', function() {
 	add_image_size('lazyload', 14, 8, true);
 	add_image_size('hero_xl', 2000, 750, true);
 	add_image_size('hero_md', 1500, 500, true);
-	add_image_size('hero_sm', 810, 412, true);
+	add_image_size('hero_sm', 800, 500, true);
 	add_image_size('wide', 1216, 2432, false);
 	add_image_size('wide_xl', 1824, 3648, false);
 });

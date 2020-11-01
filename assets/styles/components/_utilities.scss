@@ -196,6 +196,10 @@ img {
 .intro {
     padding: 75px 45px;
     @include border-radius($border-radius-lg * 3);
-    position: relative;
     background-color: $soft-green;
+
+    h1 {
+        font-size: 3.2rem;
+        line-height: 4rem;    
+    }
 }

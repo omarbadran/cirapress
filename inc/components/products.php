@@ -23,8 +23,6 @@ function query($col = "4"){
 
     query_posts($args);
 
-    echo "<div class='row'>";
-    
     while ( have_posts() ) {
         the_post();
 
@@ -50,7 +48,7 @@ function query($col = "4"){
                 echo "<div class='card-body px-0 pt-3'>";
                     echo "<div class='d-flex justify-content-between align-items-start'>";
                         echo "<div class='item-title'>";
-                            echo "<h3 class='h5 mb-0 post-title'>";
+                            echo "<h3 class='h5 mb-0 post-title text-truncate'>";
                                 echo "<a href='$url'>$title</a>";
                             echo "</h3>";
                             
@@ -62,8 +60,6 @@ function query($col = "4"){
             echo "</div>";
         echo "</article>";
     }
-
-    echo "</div>";
 
     wp_reset_query();
 }

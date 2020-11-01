@@ -22,7 +22,7 @@
                         'class' => 'rounded border'
                     ]) ?>
 
-                    <h2 class="h1 mt-4 mb-4">About the Product</h2>
+                    <h2 class="mt-4 mb-4">About the Product</h2>
 
                     <?php the_content() ?>
                 </div>
