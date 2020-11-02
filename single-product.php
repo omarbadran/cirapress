@@ -17,12 +17,32 @@
             <div class="row">
 
                 <!-- Product info -->
-                <div class="product-info product-info col-md-5 col-lg-9 pr-md-6">
+                <div class="product-info product-info col-md-5 col-lg-9 pr-md-5">
                     <?php the_post_thumbnail('hero_sm', [
                         'class' => 'rounded border'
                     ]) ?>
 
-                    <h2 class="mt-4 mb-4">About the Product</h2>
+                    <div class="demo-bar card rounded mt-3 card px-3 text-sm-center">
+                        <div class="row d-flex justify-content-between justify-content-md-center align-items-center my-3">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                                <a href="#" class="btn btn-success-alt btn-block">Live Preview<i class="las la-desktop ml-2"></i></a>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-4">
+                                <p class="m-0 text-lg-right text-md-right text-md-center">Spread the word and earn !</p>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Send to somene" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success-alt text-success" type="button">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="h1 mt-4 mb-4">About the Product</h2>
 
                     <?php the_content() ?>
                 </div>

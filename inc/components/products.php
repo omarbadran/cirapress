@@ -52,10 +52,11 @@ function query($col = "4"){
                                 echo "<a href='$url'>$title</a>";
                             echo "</h3>";
                             
-                            echo "<p class='text-muted small mt-3'>$excerpt</p>";
                         echo "</div>";
                         echo "<div class='item-price'><span>$$price</span></div>";
                     echo "</div>";
+                    
+                    echo "<p class='text-muted small mt-3'>$excerpt</p>";
                 echo "</div>";
             echo "</div>";
         echo "</article>";

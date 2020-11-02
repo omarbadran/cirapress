@@ -32,17 +32,17 @@ add_action('after_setup_theme', function() {
         [
             'name' => 'thumbnail',
             'w'    => 100,
-            'h'    => 100,
+            'h'    => 76,
         ],
         [
             'name' => 'medium',
             'w'    => 360,
-            'h'    => 720,
+            'h'    => 272,
         ],
         [
             'name' => 'large',
             'w'    => 720,
-            'h'    => 1440,
+            'h'    => 544,
         ]
 	];
   
@@ -55,11 +55,11 @@ add_action('after_setup_theme', function() {
         }
     }
     
-	add_image_size('lazyload', 14, 8, true);
-	add_image_size('hero_xl', 2000, 750, true);
-	add_image_size('hero_md', 1500, 500, true);
-	add_image_size('hero_sm', 800, 500, true);
-	add_image_size('wide', 1216, 2432, false);
-	add_image_size('wide_xl', 1824, 3648, false);
+	add_image_size('lazyload', 16, 12, true);
+	add_image_size('hero_xl', 2000, 1511, true);
+	add_image_size('hero_md', 1500, 1133, true);
+	add_image_size('hero_sm', 800, 604, true);
+	add_image_size('wide', 1216, 919, false);
+	add_image_size('wide_xl', 1824, 1378, false);
 });
   
