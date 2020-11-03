@@ -6,6 +6,11 @@
  */
     $info = get_post_meta(get_the_ID(), 'product_info', true);
     $features = get_post_meta(get_the_ID(), 'product_features', true);
+    $plans = get_post_meta(get_the_ID(), 'product_plans', true);
+
+    $default_plan_id = $info["default_plan_id"];
+    $plan_key = array_search($default_plan_id, array_column($plans, 'id'));
+    $plan = $plans[$plan_key];
 
     $created = explode(" ", $info['created'])[0];
     $updated = explode(" ", $info['updated'])[0];
@@ -17,7 +22,7 @@
             <div class="row">
 
                 <!-- Product info -->
-                <div class="product-info product-info col-md-5 col-lg-9 pr-md-5">
+                <div class="product-info product-info col-md-5 col-lg-9 pr-md-5" fs-product-id="<?= $info['id'] ?>" fs-plan-id="<?= $plan['id'] ?>" fs-public-key="<?= FS__API_PUBLIC_KEY ?>">
                     <?php the_post_thumbnail('hero_sm', [
                         'class' => 'rounded border'
                     ]) ?>
@@ -33,7 +38,7 @@
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-4">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Send to somene" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <input type="text" class="form-control" placeholder="Send to someone" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-success-alt text-success" type="button">Send</button>
                                     </div>
@@ -42,9 +47,11 @@
                         </div>
                     </div>
                     
-                    <h2 class="h1 mt-4 mb-4">About the Product</h2>
+                    <h2 class="mt-4 mb-4">About the Product</h2>
 
-                    <?php the_content() ?>
+                    <div class="post-content">
+                        <?php the_content() ?>
+                    </div>
                 </div>
 
                 <!-- Sidebar -->
@@ -54,31 +61,40 @@
                         <!-- Purchase  -->
                         <div class="sidebar-widget">
                             <?php the_title('<h1 class="mb-4 h2">' , '</h1>') ?>
-                                                        
+
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-12">
-                                    <div class="custom-control custom-radio mb-2 d-flex justify-content-between align-items-center">
-                                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio1">Single Site</label>
-                                        <div class="label-price">$39</div>
+                                    <?php foreach ($plan['pricing'] as $pricing) : ?>
+                                        <?php 
+                                            switch ($pricing['licenses']) {
+                                                case 1:
+                                                    $label = 'Single Site';
+                                                    break;
 
-                                    </div>
-                                    <div class="custom-control custom-radio mt-2 mb-2 d-flex justify-content-between align-items-center">
-                                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio2">Three Sites</label>
-                                        <div class="label-price">$59</div>
+                                                case 3:
+                                                    $label = 'Three Sites';
+                                                    break;
 
-                                    </div>
-                                    <div class="custom-control custom-radio mt-2 mb-4 d-flex justify-content-between align-items-center">
-                                        <input type="radio" checked="" id="customRadio3" name="customRadio" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio3">25 Sites</label>
-                                        <div class="label-price">$199</div>
-                                    </div>
+                                                case 5:
+                                                    $label = 'Five Sites';
+                                                    break;
+    
+                                                default:
+                                                    $label = $pricing['licenses'] . ' Sites';
+                                                    break;
+                                            }
+                                        ?>
+                                        <div class="custom-control custom-radio mb-2 d-flex justify-content-between align-items-center">
+                                            <input type="radio" id="<?= $pricing['licenses'] ?>" name="licenses" class="license custom-control-input">
+                                            <label class="custom-control-label" for="<?= $pricing['licenses'] ?>"><?= $label ?></label>
+                                            <div class="label-price">$<?= $pricing['annual_price'] ?></div>
+                                        </div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
 
-                            <button class="btn btn-success btn-block" type="button">
-                                Purchase → <span class="price"> $39</span>
+                            <button id="purchase" class="btn btn-success btn-block mt-2" type="button">
+                                Purchase → <span class="price"></span>
                             </button>
                         </div>
 

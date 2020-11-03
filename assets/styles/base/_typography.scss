@@ -10,7 +10,6 @@ a, a.lead {
 
 h1, h2, h3, h4, h5, h6 {
     letter-spacing: -.02em;
-    word-spacing: 1px;
 }
 
 small, .small {
@@ -22,4 +21,9 @@ small, .small {
     h1, h2, h3, h4, h5, h6 {
         padding-top: $headings-margin-bottom;
     }    
+}
+
+.post-content {
+    line-height: 1.75;
+    font-weight: 500;
 }

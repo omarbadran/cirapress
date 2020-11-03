@@ -9,7 +9,13 @@ namespace CiraPress\Freemius;
 
 require_once 'vendor/freemius/Freemius.php';
 
-$freemius = new \Freemius_Api('developer', '9577', 'pk_b34b8fef836df86133740ca3fe0af', 'sk_pU{_MRLLhcu4Fp;$]:xc@Zgo=LO9c');
+define( 'FS__API_SCOPE', 'developer' );
+define( 'FS__API_DEV_ID', 9577 );
+define( 'FS__API_PUBLIC_KEY', 'pk_b34b8fef836df86133740ca3fe0af' );
+define( 'FS__API_SECRET_KEY', 'sk_pU{_MRLLhcu4Fp;$]:xc@Zgo=LO9c' );
+
+
+$freemius = new \Freemius_Api(FS__API_SCOPE, FS__API_DEV_ID, FS__API_PUBLIC_KEY, FS__API_SECRET_KEY);
 
     
 /**
