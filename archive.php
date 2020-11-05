@@ -1,12 +1,14 @@
 <?php get_header(); ?>
 <div class="wrapper pt-6">
         <div class="container">
-            <h1 class="h2 mb-5">
+            <h1 class="h3 mb-5">
                 <?php 
                     if( is_home() ) {
                         echo 'Latest Posts';
                     } elseif ( is_search() ) {
                         echo 'Search Results';
+                    } elseif ( is_post_type_archive('product') ) {
+                        echo 'Latest Product';
                     } else {
                         the_archive_title('', '');
                     }
@@ -26,7 +28,11 @@
                         while ( have_posts() ) {
                             the_post();
 
-                            include get_template_directory() . '/inc/partials/content/list/single.php';
+                            $type = get_post_type();
+                            
+                            $template = $type == 'product' ? '/inc/partials/product/list/single.php' : '/inc/partials/content/list/single.php';
+
+                            include get_template_directory() . $template;
                             
                             $count++;
                         }

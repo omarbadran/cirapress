@@ -46,7 +46,7 @@
             </div>
 
             <div class="row">
-                <?php CiraPress\Products\query(3); ?>
+                <?php CiraPress\Products\query(); ?>
             </div>
         </div>
     </section>

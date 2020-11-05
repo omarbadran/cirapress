@@ -44,7 +44,7 @@ function query($col = "4"){
                 echo "<div class='card-body px-0 pt-3'>";
                     echo "<div class='d-flex justify-content-between align-items-start'>";
                         echo "<div class='item-title'>";
-                            echo "<h3 class='h5 mb-0 post-title text-truncate'>";
+                            echo "<h3 class='h5 mb-0 post-title'>";
                                 echo "<a href='$url'>$title</a>";
                             echo "</h3>";
                             
@@ -52,7 +52,7 @@ function query($col = "4"){
                         echo "<div class='item-price'><span>$$price</span></div>";
                     echo "</div>";
                     
-                    echo "<p class='text-muted small mt-3'>$excerpt</p>";
+                    echo "<p class='mt-4 small'>$excerpt</p>";
                 echo "</div>";
             echo "</div>";
         echo "</article>";

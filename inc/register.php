@@ -59,6 +59,7 @@ add_action('init', function () {
         'label'             => __('Products', 'cirapress'),
         'menu_icon'         => 'dashicons-money-alt',
         'show_in_rest'      => true,
+        'has_archive'       => 'products',
         'supports' =>       [
             'title',
             'custom-fields',
