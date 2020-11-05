@@ -1,0 +1,42 @@
+.blog-post-img-wrapper {
+    height: 40vh;
+}
+
+.blog-post {
+    padding-top: 35px;
+    p {
+        font-size: $font-size-lg;
+    }
+}
+
+
+.colored-card {
+    position: relative;
+    
+    .blog-title {
+        color: $white;
+    }
+    
+    &.color-light .blog-title {
+        color: $headings-color;
+        p {
+            color: $body-color;
+        }
+    }
+
+    svg {
+        margin-top: -3px;
+    }
+}
+
+.post-thumb {
+    position: relative;
+}
+
+
+
+.post-thumb .post-tag {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.25rem;
+}

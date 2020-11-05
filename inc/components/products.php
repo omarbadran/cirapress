@@ -15,13 +15,9 @@ namespace CiraPress\Products;
  * @return string
  */
 function query($col = "4"){
-    global $wp_query;
-
-    $args = array_merge($wp_query->query_vars, [
+    query_posts([
         'post_type' => 'product'
     ]);
-
-    query_posts($args);
 
     while ( have_posts() ) {
         the_post();
