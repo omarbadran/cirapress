@@ -99,6 +99,12 @@
     }
 }
 
+.custom-control-label {
+    line-height: 22px;
+    font-size: 15px;
+}
+
+
 @include media-breakpoint-down(sm) {
     .form-control-lg {
         font-size: $font-size-base;

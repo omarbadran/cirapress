@@ -1,12 +1,12 @@
 <div class="col-md-4 mb-4">
-    <div class="card colored-card color-light hover-box-shadow border-0">
-        <div class="card-body rounded <?= $colors[$count] ?>">
-            <div class="d-flex justify-content-between align-items-center mb-5">
+    <div class="card colored-card color-light hover-card border-0">
+        <div class="card-body rounded <?= $colors[$count] ?> p-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
                 <a href="#!" class="label font-weight-bold"><?= get_the_category()[0]->name ?? null ?></a>
                 <span class="blog-date small"><?php echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . ' ago'; ?></span>
             </div>
 
-            <h2>
+            <h2 class="hover-fade-out">
                 <a href="<?= get_permalink() ?>" class="blog-title"><?= get_the_title() ?></a>
             </h2>
 

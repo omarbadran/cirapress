@@ -1,9 +1,4 @@
 <?php
-/**
- * Single product template file.
- *
- * @package CiraPress
- */
     $info = get_post_meta(get_the_ID(), 'product_info', true);
     $features = get_post_meta(get_the_ID(), 'product_features', true);
     $plans = get_post_meta(get_the_ID(), 'product_plans', true);
@@ -22,15 +17,15 @@
             <div class="row">
 
                 <!-- Product info -->
-                <div class="product-info product-info col-md-5 col-lg-9 pr-md-5" fs-product-id="<?= $info['id'] ?>" fs-plan-id="<?= $plan['id'] ?>" fs-public-key="<?= FS__API_PUBLIC_KEY ?>">
+                <div class="product-info product-info col-md-5 col-lg-9 pr-lg-5" fs-product-id="<?= $info['id'] ?>" fs-plan-id="<?= $plan['id'] ?>" fs-public-key="<?= FS__API_PUBLIC_KEY ?>">
                     <?php the_post_thumbnail('hero_sm', [
                         'class' => 'rounded border'
                     ]) ?>
 
-                    <div class="demo-bar card rounded mt-3 card px-3 text-sm-center">
+                    <div class="demo-bar card rounded mt-4 card px-3 text-sm-center">
                         <div class="row d-flex justify-content-between justify-content-md-center align-items-center my-3">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-                                <a href="#" class="btn btn-success-alt btn-block">Live Preview<i class="las la-desktop ml-2"></i></a>
+                                <a href="#" class="btn btn-success-alt btn-block">Live Preview</i></a>
                             </div>
 
                             <div class="col-sm-12 col-md-12 col-lg-4">
@@ -47,7 +42,7 @@
                         </div>
                     </div>
                     
-                    <h2 class="mt-4 mb-4">About the Product</h2>
+                    <h2 class="mt-4">About the Product</h2>
 
                     <div class="post-content">
                         <?php the_content() ?>
@@ -55,7 +50,7 @@
                 </div>
 
                 <!-- Sidebar -->
-                <div class="col-md-5 col-lg-3 pl-md-0 pr-md-0 ml-md-n2">
+                <div class="col-lg-3 pl-lg-0">
                     <div class="sidebar sticky-lg-top sticky-md-top">
 
                         <!-- Purchase  -->
@@ -93,7 +88,7 @@
                                 </div>
                             </div>
 
-                            <button id="purchase" class="btn btn-success btn-block mt-2" type="button">
+                            <button id="purchase" class="btn btn-success btn-block mt-3" type="button">
                                 Purchase → <span class="price"></span>
                             </button>
                         </div>

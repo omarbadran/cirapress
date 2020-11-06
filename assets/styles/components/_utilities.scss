@@ -131,9 +131,8 @@ img {
     }
 }
 
-.hover-box-shadow {
+.hover-card {
     &:hover {
-        box-shadow: $box-shadow;
         transform: translateY(-$spacer * 0.3);
     }
 }

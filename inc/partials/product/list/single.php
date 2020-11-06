@@ -44,7 +44,7 @@
                 <div class='item-price'><span>$<?= $price ?></span></div>
             </div>
             
-            <p class='mt-4 small'><?= $excerpt ?></p>
+            <p class='mt-3 small'><?= $excerpt ?></p>
         </div>
     </div>
 </article>
