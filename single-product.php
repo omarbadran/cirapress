@@ -22,7 +22,7 @@
                         'class' => 'rounded border'
                     ]) ?>
 
-                    <div class="demo-bar card rounded mt-4 card px-3 text-sm-center">
+                    <div class="demo-bar card rounded mt-4 card px-3 text-sm-center bg-transparent">
                         <div class="row d-flex justify-content-between justify-content-md-center align-items-center my-3">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                                 <a href="#" class="btn btn-success-alt btn-block">Live Preview</i></a>
@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-4">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Send to someone" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <input type="text" class="form-control bg-transparent" placeholder="Send to someone" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-success-alt text-success" type="button">Send</button>
                                     </div>

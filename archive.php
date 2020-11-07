@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="wrapper pt-6">
         <div class="container">
-            <h1 class="h3 mb-5">
+            <h1 class="mb-6 text-center">
                 <?php 
                     if( is_home() ) {
                         echo 'Latest Posts';

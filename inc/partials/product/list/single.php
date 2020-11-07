@@ -28,7 +28,7 @@
 ?>
 
 <article id='post-<?= $id ?>' class='<?= $class ?>'>
-    <div class='card item-card h-100 border-0'>
+    <div class='card item-card h-100 border-0 bg-transparent'>
         <header class='item-card__image rounded'>
             <a href='<?= $url ?>'><?= $thumb ?></a>
         </header>

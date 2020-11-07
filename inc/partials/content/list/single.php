@@ -1,16 +1,18 @@
 <article class="col-md-4 mb-4">
     <div class="card colored-card color-light hover-card">
         <div class="card-body rounded">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <a href="#!" class="label font-weight-bold"><?= get_the_category()[0]->name ?? null ?></a>
-                <span class="blog-date small"><?php echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . ' ago'; ?></span>
-            </div>
+            <?php if ( get_post_type() == 'post' ) : ?>
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <a href="<?= get_term_link(get_the_category()[0]) ?? null ?>" class="label font-weight-bold"><?= get_the_category()[0]->name ?? null ?></a>
+                    <span class="blog-date small"><?php echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . ' ago'; ?></span>
+                </div>
+            <?php endif; ?>
 
             <h2 class="hover-fade-out">
                 <a href="<?= get_permalink() ?>" class="blog-title"><?= get_the_title() ?></a>
             </h2>
 
-            <p class="py-2">
+            <p>
                 <?php echo get_the_excerpt() ?>
             </p>
 

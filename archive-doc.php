@@ -8,6 +8,8 @@
 <?php get_header() ?>
     <div class="wrapper pt-6">
         <div class="container">
+            <h1 class="mb-6 text-center">Documentation</h1>
+
             <div class="row">
                 <?php foreach ($terms as $term) : ?>
 
