@@ -22,9 +22,6 @@
                     }
 
                     if ( have_posts() ) {
-                        $colors = ['bg-success-alt', 'bg-warning-alt', 'bg-danger-alt', 'bg-primary-alt', 'bg-dark-alt', 'bg-info-alt', 'bg-secondary-alt'];
-                        $count = 0;
-
                         while ( have_posts() ) {
                             the_post();
 
@@ -33,8 +30,6 @@
                             $template = $type == 'product' ? '/inc/partials/product/list/single.php' : '/inc/partials/content/list/single.php';
 
                             include get_template_directory() . $template;
-                            
-                            $count++;
                         }
 
                         the_posts_pagination();

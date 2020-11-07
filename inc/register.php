@@ -66,10 +66,6 @@ add_action('init', function () {
             'editor',
             'thumbnail',
             'excerpt'
-        ],
-        'taxonomies' => [
-            'category',
-            'post_tag'
         ]
     ];
 
@@ -104,4 +100,70 @@ add_action('init', function () {
         'single' => true,
         'type' => 'array',
     ]);
+});
+
+/**
+ * Register docus post type
+ *
+ * @package CiraPress
+ */
+add_action('init', function () {
+    $args = array(
+        'hierarchical'      => true,
+        'label'             => 'Category',
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => [ 'slug' => 'doc_category' ],
+    );
+
+    register_taxonomy('doc_category', [ 'doc' ], $args);
+    
+    $args = [
+        'public'            => true,
+        'label'             => __('Docs', 'cirapress'),
+        'menu_icon'         => 'dashicons-format-aside',
+        'show_in_rest'      => true,
+        'has_archive'       => 'docs',
+        'supports' =>       [
+            'title',
+            'custom-fields',
+            'editor',
+            'thumbnail',
+            'excerpt'
+        ],
+        'taxonomies' => [
+            'doc_category',
+        ]
+    ];
+
+    register_post_type('doc', $args);
+
+
+});
+
+
+/**
+ * Display a custom taxonomy dropdown in admin
+ */
+add_action('restrict_manage_posts', function () {
+	global $typenow;
+    
+    $post_type = 'doc';
+    $taxonomy  = 'doc_category';
+    
+	if ( $typenow == $post_type ) {
+		$selected      = isset($_GET[$taxonomy]) ? $_GET[$taxonomy] : '';
+        $info_taxonomy = get_taxonomy($taxonomy);
+        
+		wp_dropdown_categories([
+			'show_option_all' => sprintf( __( 'Show all %s', 'textdomain' ), $info_taxonomy->label ),
+			'taxonomy'        => $taxonomy,
+			'name'            => $taxonomy,
+			'orderby'         => 'name',
+			'selected'        => $selected,
+			'show_count'      => true,
+			'hide_empty'      => true,
+        ]);
+	};
 });

@@ -1,6 +1,6 @@
-<div class="col-md-4 mb-4">
-    <div class="card colored-card color-light hover-card border-0">
-        <div class="card-body rounded <?= $colors[$count] ?> p-5">
+<article class="col-md-4 mb-4">
+    <div class="card colored-card color-light hover-card">
+        <div class="card-body rounded">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <a href="#!" class="label font-weight-bold"><?= get_the_category()[0]->name ?? null ?></a>
                 <span class="blog-date small"><?php echo esc_html( human_time_diff( get_the_time('U'), current_time('timestamp') ) ) . ' ago'; ?></span>
@@ -37,4 +37,4 @@
             </div>
         </div>
     </div>
-</div>
+</article>

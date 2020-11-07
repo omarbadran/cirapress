@@ -15,4 +15,3 @@ require_once 'inc/filters.php';
 require_once 'inc/ajax.php';
 
 require_once 'inc/navbar.php';
-require_once 'inc/components/products.php';

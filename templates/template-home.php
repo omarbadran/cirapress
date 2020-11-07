@@ -46,7 +46,24 @@
             </div>
 
             <div class="row">
-                <?php CiraPress\Products\query(); ?>
+                <?php
+                        query_posts([
+                            'post_type' => 'product'
+                        ]);
+
+                        if ( have_posts() ) {
+                            while ( have_posts() ) {
+                                the_post();
+
+
+                                include get_template_directory() . '/inc/partials/product/list/single.php';
+                            }
+
+                            the_posts_pagination();
+                        }
+                    
+                        wp_reset_query();
+                    ?>
             </div>
         </div>
     </section>

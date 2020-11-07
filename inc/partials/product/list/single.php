@@ -33,10 +33,10 @@
             <a href='<?= $url ?>'><?= $thumb ?></a>
         </header>
 
-        <div class='card-body px-0 pt-3'>
+        <div class='card-body px-0 pt-4'>
             <div class='d-flex justify-content-between align-items-start'>
                 <div class='item-title'>
-                    <h3 class='h5 mb-0 post-title'>
+                    <h3 class='h5 post-title mb-0'>
                         <a href='<?= $url ?>'><?= $title ?></a>
                     </h3>
                     
@@ -44,7 +44,7 @@
                 <div class='item-price'><span>$<?= $price ?></span></div>
             </div>
             
-            <p class='mt-3 small'><?= $excerpt ?></p>
+            <p class='small mt-3'><?= $excerpt ?></p>
         </div>
     </div>
 </article>

@@ -83,15 +83,20 @@ add_action('wp_enqueue_scripts', function() {
  * @package CiraPress
  */
 add_action('enqueue_block_editor_assets', function () {
+	global $post_type;
+
 	$timestamps = CiraPress\assets_timestamp();
 
-	wp_enqueue_script(
-		'cirapress-js',
-		get_template_directory_uri() . '/dist/scripts/gutenberg.js',
-		[],
-		$timestamps['js'],
-		true
-	);
+    if( 'product' == $post_type ) {
+		wp_enqueue_script(
+			'cirapress-js',
+			get_template_directory_uri() . '/dist/scripts/gutenberg.js',
+			[],
+			$timestamps['js'],
+			true
+		);
+	}
+
 });
 
 /**
@@ -100,12 +105,16 @@ add_action('enqueue_block_editor_assets', function () {
  * @package CiraPress
  */
 add_action('enqueue_block_editor_assets', function () {
+	global $post_type;
+
 	$timestamps = CiraPress\assets_timestamp();
 
-	wp_enqueue_style(
-		'cirapress-gutenberg-style',
-		get_template_directory_uri() . '/dist/styles/gutenberg.css',
-		[],
-		$timestamps['css']
-	);
+	if( 'product' == $post_type ) {
+		wp_enqueue_style(
+			'cirapress-gutenberg-style',
+			get_template_directory_uri() . '/dist/styles/gutenberg.css',
+			[],
+			$timestamps['css']
+		);
+	}
 });

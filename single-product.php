@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     
-                    <h2 class="mt-4">About the Product</h2>
+                    <h2 class="mt-5">About the Product</h2>
 
                     <div class="post-content">
                         <?php the_content() ?>

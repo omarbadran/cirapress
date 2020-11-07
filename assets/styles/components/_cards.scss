@@ -48,7 +48,6 @@ a.card {
 	width: 83%;
 
 	h3 {
-		@include font-size(18px);
 		padding-right: 5px;
 
 		a {
@@ -204,9 +203,3 @@ a.card {
 	left: 10px;
 	position: absolute;
 }
-
-// .post-title {
-// 	&, a {
-// 		color: $headings-color;
-// 	}
-// }
