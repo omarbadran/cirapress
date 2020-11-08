@@ -14,7 +14,7 @@
 ?>
 
 <?php get_header(); ?>
-    <div class="wrapper pt-6">
+    <div class="py-5">
         <div class="container">
             <div class="row">
 
@@ -24,7 +24,7 @@
                         'class' => 'rounded border'
                     ]) ?>
 
-                    <div class="demo-bar card rounded mt-4 card px-3 text-sm-center bg-transparent">
+                    <div class="demo-bar card rounded mt-3 card px-3 text-sm-center bg-transparent">
                         <div class="row d-flex justify-content-between justify-content-md-center align-items-center my-3">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                                 <a href="<?= $preview_url ?>" target="_blank" class="btn btn-success-alt btn-block">Live Preview</i></a>
@@ -44,10 +44,20 @@
                         </div>
                     </div>
                     
-                    <h2 class="mt-6 mb-4">About the Product</h2>
+                    <h2 class="pt-3 mt-4 mb-4">About the Product</h2>
 
                     <div class="post-content">
                         <?php the_content() ?>
+                    </div>
+                    
+                    <div class="faq mb-4 mt-5 p-5 rounded">
+                            <h4 class="mb-2">Frequently Asked Questions</h4>
+                            <p class="mb-5">
+                                For anything else (Installation, billing, etc), please visit our
+                                <a href="<?= site_url() ?>/docs" clas="btn btn-link">Help Center</a>.
+                            </p>
+
+                        <?php include get_template_directory() . '/inc/partials/faq.php'; ?>
                     </div>
                 </div>
 
@@ -90,9 +100,7 @@
                                 </div>
                             </div>
 
-                            <button id="purchase" class="btn btn-success btn-block mt-3" type="button">
-                                Purchase → <span class="price"></span>
-                            </button>
+                            <button id="purchase" class="btn btn-primary btn-block mt-3" type="button">Purchase</button>
                         </div>
 
                         <div class="sidebar-widget">

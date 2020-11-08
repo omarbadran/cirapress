@@ -7,7 +7,7 @@ $pink:      #e83e8c;
 $red:       #ff487e;
 $orange:    #ff5959;
 $yellow:    #ffc107;
-$green:     #40c185;
+$green:     #45b380;
 $teal:      #20c997;
 $cyan:      #3bb4c1;
 $dark-1:    #1e1e27;
@@ -17,7 +17,7 @@ $secondary:   #506690;
 $soft-green:  #eaf5f3;
 $light:       #f7fafc;
 $dark:        #17141d;
-$success:     #40c185;
+$success:     #45b380;
 
 $theme-colors: (
   "primary":    $primary,
@@ -59,14 +59,15 @@ $grays: (
 $body-bg:                   $white;
 $text-color:                $dark;
 $hover-color:               $red;
-$body-color:              #2c3038;
-$border-color:            #e1e5ec;
+$body-color:              #333333;
+$border-color:            $gray-300;
+$hr-border-color:		  $gray-300;
 $border-color-dark:       #242a35 !important;
 $link-hover-decoration:     none;
 $link-decoration:           none;
 $link-color:                theme-color("primary");
 $link-hover-color:          darken($link-color, 5%);
-$headings-color:          #2C3038;
+$headings-color:          #333333;
 
 
 $navbar-dark-color:         rgba($white, .65);

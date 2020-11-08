@@ -16,7 +16,7 @@
 @each $color,$value in $theme-colors {
     .btn-#{$color}-alt {
         color: rgba($body-color, 0.9);
-        background-color: rgba($value, 0.20);
+        background-color: rgba($value, 0.25);
     }
 }
 

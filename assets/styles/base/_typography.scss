@@ -10,6 +10,7 @@ a, a.lead {
 
 h1, h2, h3, h4, h5, h6 {
     letter-spacing: -.02em;
+    word-spacing: .02em;
 }
 
 small, .small {
@@ -19,16 +20,10 @@ small, .small {
 .post-content {
     font-weight: 500;
     font-size: 1.03rem;
-    line-height: 1.65;
 
     h1, h2, h3, h4, h5, h6 {
-        padding-top: $headings-margin-bottom * 1.5;
-    }
-}
-
-.product-info {
-    .post-content {
-        font-size: 1rem;
+        padding-top: $headings-margin-bottom * 1.25;
+        text-transform: capitalize;
     }
 }
 
