@@ -22,6 +22,20 @@ small, .small {
     line-height: 1.65;
 
     h1, h2, h3, h4, h5, h6 {
-        padding-top: $headings-margin-bottom;
+        padding-top: $headings-margin-bottom * 1.5;
     }
+}
+
+.product-info {
+    .post-content {
+        font-size: 1rem;
+    }
+}
+
+code {
+	background-color: $gray-300;
+    padding: 3px 5px;
+    border-radius: 3px;
+    margin: 0px 3px;
+    color: inherit;
 }

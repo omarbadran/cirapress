@@ -16,6 +16,14 @@ let freemiusIntegration = (props) => {
                 onChange={(value) => props.setMetaValue('product_id', value)}
             />
 
+            <TextControl
+                label="Preview URL"
+                value={props.product_preview_url}
+                onChange={(value) => props.setMetaValue('product_preview_url', value)}
+            />
+
+            <br/>
+
             <Button isPrimary onClick={() => synchronizeProduct(props.product_id)}>
                 Synchronize
             </Button>
@@ -40,7 +48,8 @@ freemiusIntegration = compose(
     }),
     withSelect(function(select) {
         return {
-            product_id: select('core/editor').getEditedPostAttribute('meta')['product_id']
+            product_id: select('core/editor').getEditedPostAttribute('meta')['product_id'],
+            product_preview_url: select('core/editor').getEditedPostAttribute('meta')['product_preview_url']
         }
     })
 )(freemiusIntegration)

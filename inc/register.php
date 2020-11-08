@@ -77,6 +77,12 @@ add_action('init', function () {
         'type' => 'string',
     ]);
 
+    register_post_meta('product', 'product_preview_url', [
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'string',
+    ]);
+
     register_post_meta('product', 'product_info', [
         'show_in_rest' => false,
         'single' => true,

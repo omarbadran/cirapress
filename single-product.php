@@ -9,6 +9,8 @@
 
     $created = explode(" ", $info['created'])[0];
     $updated = explode(" ", $info['updated'])[0];
+
+    $preview_url = get_post_meta(get_the_ID(), 'product_preview_url', true);
 ?>
 
 <?php get_header(); ?>
@@ -25,15 +27,15 @@
                     <div class="demo-bar card rounded mt-4 card px-3 text-sm-center bg-transparent">
                         <div class="row d-flex justify-content-between justify-content-md-center align-items-center my-3">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-                                <a href="#" class="btn btn-success-alt btn-block">Live Preview</i></a>
+                                <a href="<?= $preview_url ?>" target="_blank" class="btn btn-success-alt btn-block">Live Preview</i></a>
                             </div>
 
                             <div class="col-sm-12 col-md-12 col-lg-4">
-                                <p class="m-0 text-lg-right text-md-right text-md-center">Spread the word and earn !</p>
+                                <p class="m-0 text-lg-right text-md-right text-md-center">Sign up and get 25% off !</p>
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-4">
                                 <div class="input-group">
-                                    <input type="text" class="form-control bg-transparent" placeholder="Send to someone" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <input type="text" class="form-control bg-transparent" placeholder="Enter your email" aria-label="Your email" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-success-alt text-success" type="button">Send</button>
                                     </div>
@@ -42,7 +44,7 @@
                         </div>
                     </div>
                     
-                    <h2 class="mt-5">About the Product</h2>
+                    <h2 class="mt-6 mb-4">About the Product</h2>
 
                     <div class="post-content">
                         <?php the_content() ?>
