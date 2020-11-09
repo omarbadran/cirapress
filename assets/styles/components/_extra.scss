@@ -79,6 +79,15 @@
     font-weight: 600;
 }
 
+.compatibility {
+    li svg {
+        height: 100%;
+        width: auto;
+        padding-bottom: 2px;
+        padding-right: 2px;    
+    }
+}
+
 .breadcrumb {
     padding: 0.5rem 0;
     margin-bottom: 1rem;
@@ -330,10 +339,10 @@
 }
 
 .label-price {
-    font-size: 15px;
-    font-weight: 500;
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    font-weight: 600;
 }
 
 .faq {
-    background-color: #f0f6f7;
+    background-color: #e7ebf1;
 }

@@ -10,20 +10,34 @@ a, a.lead {
 
 h1, h2, h3, h4, h5, h6 {
     letter-spacing: -.02em;
-    word-spacing: .02em;
 }
 
 small, .small {
     font-weight: 400;
 }
 
-.post-content {
-    font-weight: 500;
-    font-size: 1.03rem;
 
-    h1, h2, h3, h4, h5, h6 {
-        padding-top: $headings-margin-bottom * 1.25;
-        text-transform: capitalize;
+.single {
+    .post-content {
+        font-weight: 500;
+        line-height: 1.65;
+        font-size: 1.03rem;
+
+        h1, h2, h3, h4, h5, h6 {
+            padding-top: $headings-margin-bottom * 1.5;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.single-product {
+    h2.display-4 {
+        font-size: 2.5rem;
+        font-weight: 600;    
+    }
+
+    .post-content {
+        font-size: 1rem;
     }
 }
 

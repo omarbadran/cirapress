@@ -41,7 +41,7 @@
                         </li>
 
                         <li class="nav-item swap-link">
-                            <a class="nav-link no-arrow btn btn-primary swap-link text-white" href="#">Sign up</a>
+                            <a class="nav-link no-arrow btn btn-primary swap-link text-white" href="#">All Access</a>
                         </li>
                     </ul>
                 </div>

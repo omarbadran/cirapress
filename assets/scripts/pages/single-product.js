@@ -16,13 +16,6 @@
         e.preventDefault();
     });
 
-    $('input.license').on('change', function () {
-        let license = $(this).attr('id');
-        let price = $(this).parent().find('.label-price').text();
-
-        $('.price').text(price);
-    });
-
     $('input.license').first().prop('checked', true).trigger('change');
 
 })(jQuery);
