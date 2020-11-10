@@ -7,7 +7,7 @@ $pink:      #e83e8c;
 $red:       #ff487e;
 $orange:    #ff5959;
 $yellow:    #ffc107;
-$green:     #45b380;
+$green:     #40c185;
 $teal:      #20c997;
 $cyan:      #3bb4c1;
 $dark-1:    #1e1e27;
@@ -17,7 +17,7 @@ $secondary:   #506690;
 $soft-green:  #eaf5f3;
 $light:       #f7fafc;
 $dark:        #17141d;
-$success:     #45b380;
+$success:     #40c185;
 
 $theme-colors: (
   "primary":    $primary,
@@ -59,9 +59,9 @@ $grays: (
 $body-bg:                   $white;
 $text-color:                $dark;
 $hover-color:               $red;
-$body-color:              #343a40;
+$body-color:              $dark;
 $border-color:            #e7ebf1;
-$hr-border-color:		  #e7ebf1;
+$hr-border-color:		  #dfe4e6;
 $border-color-dark:       #242a35 !important;
 $link-hover-decoration:     none;
 $link-decoration:           none;
@@ -109,7 +109,7 @@ $paragraph-margin-bottom:   1rem;
 // Shadow
 $box-shadow-sm:     0 2px 4px 0 rgba(147, 150, 171, 0.1);
 $box-shadow:        0 2px 8px 0 rgba(147, 150, 171, 0.1);
-$box-shadow-lg:     0 5px 15px 0 rgba(147, 150, 171, 0.1);
+$box-shadow-lg:     0 0px 20px 0 rgba(147, 150, 171, 0.1);
 $btn-box-shadow: 	none;
 
 // Padding

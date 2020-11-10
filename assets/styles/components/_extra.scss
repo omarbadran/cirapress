@@ -3,8 +3,9 @@
 -------------------------------------- */
 
 .wrapper {
-    padding-bottom: $spacer * 6;
     @extend .bg-light;
+    @extend .pt-5;
+    @extend .pb-10;
     min-height: 600px;
 }
 
@@ -54,7 +55,7 @@
 
 .sidebar-widget {
     padding: 25px 20px;
-    border: $border-width solid $border-color;
+    background: #edf2f7;
     margin-bottom: $spacer * 1.5;
     @include border-radius($border-radius);
 
@@ -66,7 +67,7 @@
 .sidebar-widget-title--sm {
     display: block;
     font-weight: 700;
-    color: $text-color;
+    color: #100e15;
     margin-bottom: 10px;
 }
 
@@ -328,6 +329,10 @@
     margin-bottom: 0.5rem;
 }
 
+//Archives
+.archive-title {
+    font-size: 1.75rem;
+}
 
 // Docs
 .next-prev-post {
@@ -339,10 +344,19 @@
 }
 
 .label-price {
-    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
     font-weight: 600;
+    opacity: .95;
+    font-size: 15px;
 }
 
 .faq {
-    background-color: #e7ebf1;
+    background-color: #eff3f7;
 }
+
+.product-excerpt {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.65;
+}
+

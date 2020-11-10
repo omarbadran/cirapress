@@ -6,9 +6,9 @@
 ?>
 
 <?php get_header() ?>
-    <div class="wrapper pt-6">
+    <div class="wrapper">
         <div class="container">
-            <h1 class="mb-6 text-center">Documentation</h1>
+            <h1 class="archive-title mb-7 text-center">Documentation</h1>
 
             <div class="row">
                 <?php foreach ($terms as $term) : ?>
@@ -26,7 +26,7 @@
                                 <h4 class="card-title m-0"><?= $term->name ?></h4>
                             </div>
 
-                            <div class="list-unstyled list-group list-group-flush">
+                            <div class="list-unstyled list-group list-group-flush border-top">
                                 <?php foreach ($subs as $sub) : ?>
                                     <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="<?= get_term_link($sub) ?>">
                                         <?= $sub->name ?>

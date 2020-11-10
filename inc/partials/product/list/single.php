@@ -28,7 +28,7 @@
 ?>
 
 <article id='post-<?= $id ?>' class='<?= $class ?>'>
-    <div class='card item-card h-100 border-0 bg-transparent'>
+    <div class='item-card h-100 border-0'>
         <header class='item-card__image rounded'>
             <a href='<?= $url ?>'><?= $thumb ?></a>
         </header>
@@ -36,7 +36,7 @@
         <div class='card-body px-0 pt-4'>
             <div class='d-flex justify-content-between align-items-start'>
                 <div class='item-title'>
-                    <h3 class='h5 post-title mb-0'>
+                    <h3 class='h4 post-title mb-0'>
                         <a href='<?= $url ?>'><?= $title ?></a>
                     </h3>
                     
@@ -44,7 +44,7 @@
                 <div class='item-price'><span>$<?= $price ?></span></div>
             </div>
             
-            <p class='small mt-3'><?= $excerpt ?></p>
+            <p class='mt-4 product-excerpt'><?= $excerpt ?></p>
         </div>
     </div>
 </article>

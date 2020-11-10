@@ -13,7 +13,7 @@
 <div class="wrapper">
 
     <!-- Intro -->
-    <section class="section">
+    <section>
         <div class="container">
             <div class="intro poition-relative">
                 <div class="row d-flex justify-content-between align-items-center">

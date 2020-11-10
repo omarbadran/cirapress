@@ -8,7 +8,7 @@
                 </div>
             <?php endif; ?>
 
-            <h2 class="hover-fade-out">
+            <h2 class="hover-fade-out pt-1">
                 <a href="<?= get_permalink() ?>" class="blog-title"><?= get_the_title() ?></a>
             </h2>
 

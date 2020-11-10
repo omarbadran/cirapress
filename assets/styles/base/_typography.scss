@@ -8,14 +8,13 @@ a, a.lead {
     font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -.02em;
-}
-
 small, .small {
     font-weight: 400;
 }
 
+.display-4 {
+    line-height: 1.5;
+}
 
 .single {
     .post-content {
@@ -31,12 +30,10 @@ small, .small {
 }
 
 .single-product {
-    h2.display-4 {
-        font-size: 2.5rem;
-        font-weight: 600;    
+    h2 {
+        font-size: 1.75rem;
     }
-
-    .post-content {
+        .post-content {
         font-size: 1rem;
     }
 }
