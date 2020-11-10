@@ -14,15 +14,35 @@
 ?>
 
 <?php get_header(); ?>
-    <div class="wrapper">
+    <div class="py-5">
         <div class="container">
             <div class="row">
 
                 <!-- Product info -->
-                <div class="product-info product-info col-md-5 col-lg-9 pr-lg-5" fs-product-id="<?= $info['id'] ?>" fs-plan-id="<?= $plan['id'] ?>" fs-public-key="<?= FS__API_PUBLIC_KEY ?>">
+                <div class="product-info product-info col-md-5 col-lg-9" fs-product-id="<?= $info['id'] ?>" fs-plan-id="<?= $plan['id'] ?>" fs-public-key="<?= FS__API_PUBLIC_KEY ?>">
                     <?php the_post_thumbnail('hero_sm', [
                         'class' => 'rounded border'
                     ]) ?>
+
+                    <div class="demo-bar card rounded mt-3 card px-3 text-sm-center">
+                        <div class="row d-flex justify-content-between justify-content-md-center align-items-center my-3">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                                <a href="#" class="btn btn-success-alt btn-block">Live Preview<i class="las la-desktop ml-2"></i></a>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-4">
+                                <p class="m-0 text-lg-right text-md-right text-md-center">Spread the word and earn !</p>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Enter Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success-alt text-success" type="button">Send </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <h2 class="pt-3 mt-4 pb-2">About the Product</h2>
 
@@ -42,12 +62,12 @@
                 </div>
 
                 <!-- Sidebar -->
-                <div class="col-lg-3 pl-lg-0">
+                <div class="col-lg-3">
                     <div class="sidebar sticky-lg-top sticky-md-top">
 
                         <!-- Purchase  -->
                         <div class="sidebar-widget">
-                            <?php the_title('<h1 class="mb-4 h2">' , '</h1>') ?>
+                            <?php the_title('<h1 class="mt-n1 pb-2 mb-3 h2">' , '</h1>') ?>
 
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-12">
@@ -71,17 +91,20 @@
                                                     break;
                                             }
                                         ?>
-                                        <div class="custom-control custom-radio mb-1 d-flex justify-content-between align-items-center">
+                                        <div class="custom-control custom-radio mb-2 d-flex justify-content-between align-items-center">
                                             <input type="radio" id="<?= $pricing['licenses'] ?>" name="licenses" class="license custom-control-input">
                                             <label class="custom-control-label" for="<?= $pricing['licenses'] ?>"><?= $label ?></label>
-                                            <div class="label-price">$<?= $pricing['annual_price'] ?></div>
+                                            <div class="label-price">$<?= $pricing['annual_price'] ?><small>.99</small></div>
                                         </div>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
 
                             <a href="<?= $preview_url ?>" target="_blank" class="btn btn-success-alt btn-block mt-3">Live Preview</i></a>
-                            <button id="purchase" class="btn btn-success btn-block mt-2" type="button">Purchase</button>
+                            
+                            <button id="purchase" class="btn btn-success btn-block mt-2" type="button">
+                                Purchase
+                            </button>
                         </div>
 
                         <div class="sidebar-widget">

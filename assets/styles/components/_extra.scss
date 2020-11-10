@@ -3,7 +3,6 @@
 -------------------------------------- */
 
 .wrapper {
-    @extend .bg-light;
     @extend .pt-5;
     @extend .pb-10;
     min-height: 600px;
@@ -55,10 +54,10 @@
 
 .sidebar-widget {
     padding: 25px 20px;
-    background: #edf2f7;
+    border: $border-width solid $border-color;
     margin-bottom: $spacer * 1.5;
     @include border-radius($border-radius);
-
+  
     h3 {
         line-height: 2rem;
     }
@@ -346,8 +345,13 @@
 .label-price {
     font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
     font-weight: 600;
-    opacity: .95;
+    opacity: .9;
     font-size: 15px;
+    
+    small {
+        opacity: .75;
+        font-size: 11px;
+    }    
 }
 
 .faq {
