@@ -19,7 +19,7 @@ $plan_id = 11731;
         <div class="row justify-content-center text-center">
             <div class="col-5">
                 <h1 class="display-4">All-Access Pass</h1>
-                <p class="lead mb-7">Unlock instant access to all of our products and save over $3000</p>
+                <p class="lead mb-6">Unlock instant access to all of our products and save over $3000</p>
             </div>
         </div>
 
@@ -123,7 +123,7 @@ $plan_id = 11731;
                     <p>Joining is risk-free. Cancel your subscription within 30 days and get a full refund. No questions asked.</p>
                 </div>
             </div>
-            <div class="col-lg-5 pr-0">
+            <div class="col-lg-5">
                 <div class="info-box">
                     <i class="las la-headset h1 text-primary"></i>
                     <h3>Support team that cares</h3>
@@ -133,7 +133,7 @@ $plan_id = 11731;
         </div>
 
     <!-- FAQ -->
-    <div class="row d-flex justify-content-center p-5">
+    <div class="row d-flex justify-content-center px-5">
         <div class="col-md-10">
             <?php include get_template_directory() . '/inc/partials/faq.php'; ?>
         </div>
