@@ -12,7 +12,7 @@
 <div id="faq-accordion">
     <?php foreach ($accordions as $title => $content) : ?>
 
-        <div class="card mb-2">
+        <div class="card mb-3 faq-single">
             <a href="#accordion-<?= $counter ?>" data-toggle="collapse" role="button" aria-expanded="false" class="p-4 collapsed" style="">
                 <div class="d-flex justify-content-between align-items-center">
                     <h6 class="mb-0 mr-2 p-0"><?= $title ?></h6>

@@ -64,11 +64,11 @@ add_action('wp_enqueue_scripts', function() {
 
 	// Template specific CSS
 
-	$template_css = "/dist/scripts/pages/$template.css";
+	$template_css = "/dist/styles/pages/$template.css";
 
 	if ( file_exists(get_template_directory() . $template_css) ) {
 		wp_enqueue_script(
-			"cirapress-$template-js",
+			"cirapress-$template-css",
 			get_template_directory_uri() . $template_css,
 			[],
 			$timestamps['js'],

@@ -12,6 +12,29 @@ small, .small {
     font-weight: 400;
 }
 
+.text-white {
+    .display-1, display-2, display-3, display-4, h1, h2, h3, h4, h5, h6, h1, h2, h3, h4, h5, h6, blockquote {
+        color: $white;
+    }
+
+    a {
+        transition: $transition-base;
+    }
+
+    .text-muted {
+        color: rgba($white, .5) !important;
+    }
+    hr{
+        border-color: rgba($white,.1);
+    }
+}
+
+.text-small {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+
+
 .display-4 {
     line-height: 1.5;
 }
