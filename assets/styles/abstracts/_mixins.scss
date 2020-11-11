@@ -15,7 +15,7 @@
 // Buttons soft colors
 @each $color,$value in $theme-colors {
     .btn-#{$color}-alt {
-        color: rgba($body-color, 0.95);
+        color: $headings-color;
         background-color: rgba($value, 0.15);
     }
 }

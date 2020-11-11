@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-4">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Enter Email" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <input type="text" class="form-control" placeholder="Enter email" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-success-alt text-success" type="button">Send </button>
                                     </div>
@@ -44,7 +44,7 @@
                         </div>
                     </div>
 
-                    <h2 class="pt-3 mt-4 pb-2">About the Product</h2>
+                    <h2 class="pt-3 my-4">About the Product</h2>
 
                     <div class="post-content">
                         <?php the_content() ?>
@@ -67,7 +67,7 @@
 
                         <!-- Purchase  -->
                         <div class="sidebar-widget">
-                            <?php the_title('<h1 class="mt-n1 pb-2 mb-3 h2">' , '</h1>') ?>
+                            <?php the_title('<h1 class="mt-n1 pb-2 mb-3 h3">' , '</h1>') ?>
 
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-12">
@@ -91,7 +91,7 @@
                                                     break;
                                             }
                                         ?>
-                                        <div class="custom-control custom-radio mb-2 d-flex justify-content-between align-items-center">
+                                        <div class="custom-control custom-radio mb-1 d-flex justify-content-between align-items-center">
                                             <input type="radio" id="<?= $pricing['licenses'] ?>" name="licenses" class="license custom-control-input">
                                             <label class="custom-control-label" for="<?= $pricing['licenses'] ?>"><?= $label ?></label>
                                             <div class="label-price">$<?= $pricing['annual_price'] ?><small>.99</small></div>

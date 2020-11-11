@@ -57,9 +57,9 @@ $grays: (
 
 
 $body-bg:                   $white;
-$text-color:                $dark;
+$text-color:                #2e4257;
 $hover-color:               $red;
-$body-color:              $dark;
+$body-color:              #2e4257;
 $border-color:            $gray-300;
 // $hr-border-color:		  #dfe4e6;
 $border-color-dark:       #242a35 !important;
@@ -67,7 +67,7 @@ $link-hover-decoration:     none;
 $link-decoration:           none;
 $link-color:                theme-color("primary");
 $link-hover-color:          darken($link-color, 5%);
-$headings-color:          $dark;
+$headings-color:          #2C3038;
 
 
 $navbar-dark-color:         rgba($white, .65);
