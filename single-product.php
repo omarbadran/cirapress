@@ -14,7 +14,7 @@
 ?>
 
 <?php get_header(); ?>
-    <div class="py-5">
+    <div class="my-2 py-4">
         <div class="container">
             <div class="row">
 
@@ -24,7 +24,7 @@
                         'class' => 'rounded border'
                     ]) ?>
 
-                    <div class="demo-bar card rounded mt-3 card px-3 text-sm-center">
+                    <div class="demo-bar card rounded mt-4 px-3 text-sm-center">
                         <div class="row d-flex justify-content-between justify-content-md-center align-items-center my-3">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                                 <a href="#" class="btn btn-success-alt btn-block">Live Preview<i class="las la-desktop ml-2"></i></a>
@@ -44,21 +44,11 @@
                         </div>
                     </div>
 
-                    <h2 class="pt-3 my-4">About the Product</h2>
+                    <h2 class="pt-3 mt-4">About the Product</h2>
 
                     <div class="post-content">
                         <?php the_content() ?>
-                    </div>
-                    
-                    <div class="faq mb-4 mt-7 p-5 rounded">
-                            <h4 class="mb-2">Frequently Asked Questions</h4>
-                            <p class="mb-5">
-                                For anything else (Installation, billing, etc), please visit our
-                                <a href="<?= site_url() ?>/docs" clas="btn btn-link">Help Center</a>.
-                            </p>
-
-                        <?php include get_template_directory() . '/inc/partials/faq.php'; ?>
-                    </div>
+                    </div>                    
                 </div>
 
                 <!-- Sidebar -->
@@ -67,7 +57,7 @@
 
                         <!-- Purchase  -->
                         <div class="sidebar-widget">
-                            <?php the_title('<h1 class="mt-n1 pb-2 mb-3 h3">' , '</h1>') ?>
+                            <?php the_title('<h1 class="mt-n2 pb-2 mb-3 h2">' , '</h1>') ?>
 
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="col-12">

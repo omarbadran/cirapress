@@ -348,7 +348,6 @@
     font-size: 15px;
 
     small {
-        opacity: .75;
         font-size: 11px;
     }    
 }
@@ -408,4 +407,8 @@
 .faq-single {
     border: 1px solid $border-color !important;
     box-shadow: none !important;
+}
+
+.sticky-lg-top {
+    top: 100px;
 }
